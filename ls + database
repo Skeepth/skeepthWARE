@@ -1,0 +1,5069 @@
+replicatedfirst.loadingscreen
+
+game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()
+local v1 = Instance.new("ScreenGui")
+v1.Parent = game.Players.LocalPlayer.PlayerGui
+local v2 = script:WaitForChild("LoadingFrame")
+v2.Parent = game.Players.LocalPlayer.PlayerGui.ScreenGui
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, true)
+script:Destroy()
+
+database.assets
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	LE1 = {
+		Name = "LE-1", 
+		MaxMessages = 30, 
+		Priority = 3
+	}, 
+	LE2 = {
+		Name = "LE-2", 
+		MaxMessages = 30, 
+		Priority = 4
+	}, 
+	ES1 = {
+		Name = "ES-1", 
+		MaxMessages = 30, 
+		Priority = 2
+	}, 
+	Global = {
+		Name = "GLOBAL", 
+		MaxMessages = 50, 
+		Priority = 1
+	}, 
+	ASPS = {
+		Name = "SECURITY-1", 
+		MaxMessages = 50, 
+		Priority = 1
+	},
+	AFI = {
+		Name = "AFI-1", 
+		MaxMessages = 50, 
+		Priority = 1
+	}, 
+	["Fire Department"] = {
+		Name = "FIRE-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	PPD = {
+		Name = "PLYMOUTH-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	MSP = {
+		Name = "STATE-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	NHCSO = {
+		Name = "COUNTY-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	LPD = {
+		Name = "LANDER-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	MNG = {
+		Name = "GUARD-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	PW = {
+		Name = "RANGER-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	NHTA = {
+		Name = "TRANSIT-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}
+};
+
+database.channels
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	LE1 = {
+		Name = "LE-1", 
+		MaxMessages = 30, 
+		Priority = 3
+	}, 
+	LE2 = {
+		Name = "LE-2", 
+		MaxMessages = 30, 
+		Priority = 4
+	}, 
+	ES1 = {
+		Name = "ES-1", 
+		MaxMessages = 30, 
+		Priority = 2
+	}, 
+	Global = {
+		Name = "GLOBAL", 
+		MaxMessages = 50, 
+		Priority = 1
+	}, 
+	ASPS = {
+		Name = "SECURITY-1", 
+		MaxMessages = 50, 
+		Priority = 1
+	},
+	AFI = {
+		Name = "AFI-1", 
+		MaxMessages = 50, 
+		Priority = 1
+	}, 
+	["Fire Department"] = {
+		Name = "FIRE-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	PPD = {
+		Name = "PLYMOUTH-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	MSP = {
+		Name = "STATE-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	NHCSO = {
+		Name = "COUNTY-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	LPD = {
+		Name = "LANDER-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	MNG = {
+		Name = "GUARD-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	PW = {
+		Name = "RANGER-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}, 
+	NHTA = {
+		Name = "TRANSIT-1", 
+		MaxMessages = 30, 
+		Priority = 5
+	}
+};
+
+database.constants
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {
+	WeaponLicensePrice = 300, 
+	Build = 381, 
+	GasPrice = 0.125, 
+	PaintPrice = 20, 
+	RepairPrice = 0.5, 
+	DayLength = 36, 
+	FogNightAmbient = 30, 
+	FogDayAmbient = 190, 
+	InventoryCarryWeight = 72, 
+	InventoryMaxMisc = 5, 
+	JumpPower = 50, 
+	HipHeight = 0, 
+	MaxHealth = 100, 
+	MaxSlopeAngle = 80, 
+	WalkSpeed = 12
+};
+local v2 = nil
+if game.PlaceId == 1901858707 then
+    v2 = 50;
+else
+	v2 = 20;
+end;
+v1.RunSpeed = v2;
+v1.WalkFOV = 70;
+v1.RunFOV = 80;
+v1.GUIEnabled = {
+	Minimap = game.PlaceId ~= 993383085
+};
+v1.VehicleLights = {
+	R = {
+		Color = Color3.fromRGB(255, 74, 77), 
+		Angle = 120, 
+		Range = 16, 
+		Brightness = 0.5
+	}, 
+	F = {
+		Color = Color3.fromRGB(254, 255, 239), 
+		Angle = 120, 
+		Range = 36, 
+		Brightness = 0.5
+	}, 
+	IL = {
+		Color = Color3.fromRGB(255, 170, 65), 
+		Range = 16
+	}, 
+	IR = {
+		Color = Color3.fromRGB(255, 170, 65), 
+		Range = 16
+	}, 
+	RV = {
+		Color = Color3.fromRGB(255, 255, 255), 
+		Range = 16
+	}, 
+	BE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(0, 0, 255), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	RE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(255, 0, 0), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	WE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(255, 255, 255), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	OE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(255, 165, 0), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	GOE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(216, 195, 103), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	TOE = {
+		Prefix = true, 
+		Color = Color3.fromRGB(216, 195, 103), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}, 
+	LED = {
+		Prefix = true, 
+		Color = Color3.fromRGB(0, 0, 0), 
+		Angle = 120, 
+		Range = 20, 
+		Brightness = 1
+	}
+};
+return v1;
+database.crimes
+local Crimes = {
+	[1] = {
+		Name = "Treason",
+		Arrest = 15,
+		Class = 2
+	},
+	[2] = {Name = "Bribery", Arrest = 15},
+	[3] = {
+		Name = "Obstruction of justice",
+		Arrest =  12
+	},
+	[4] = {Name = "Evasion", Arrest = 15},
+	[5] = {
+		Name = "Felony evasion",
+		Arrest = 10,
+		Class = 2
+	},
+	[6] = {
+		Name = "Impersonation",
+		Arrest = 15,
+	},
+	[7] = {
+		Name = "Second-degree murder",
+		Arrest = 15,
+		Class = 2
+	},
+	[8] = {
+		Name = "Kidnapping",
+		Arrest = 15,
+		Class = 2
+	},
+	[9] = {
+		Name = "Involuntary manslaughter",
+		Arrest = 10,
+		Class = 2
+	},
+	[10] = {
+		Name = "Voluntary manslaughter",
+		Arrest =  12,
+		Class = 2
+	},
+	[11] = {
+		Name = "False imprisonment",
+		Arrest = 15,
+		Class = 2
+	},
+	[12] = {
+		Name = "Extortion",
+		Arrest = 10,
+		Class = 2
+	},
+	[13] = {
+		Name = "Robbery",
+		Arrest = 15,
+		Class = 2
+	},
+	[14] = {
+		Name = "Assault with a deadly weapon",
+		Arrest = 10,
+		Class = 2
+	},
+	[15] = {Name = "Assault", Arrest = 15},
+	[16] = {Name = "Battery", Arrest = 17},
+	[17] = {
+		Name = "Felony hit and run",
+		Arrest = 10,
+		Class = 2
+	},
+	[18] = {
+		Name = "Hit and run",
+		Arrest = 10,
+		Fine = 150
+	},
+	[19] = {
+		Name = "Arson",
+		Arrest = 10,
+		Class = 2
+	},
+	[20] = {
+		Name = "Burglary",
+		Arrest = 10,
+		Class = 2
+	},
+	[21] = {
+		Name = "Grand theft",
+		Arrest = 15,
+		Class = 2
+	},
+	[22] = {
+		Name = "Petty theft",
+		Arrest = 10,
+		Fine = 50
+	},
+	[23] = {
+		Name = "Trespassing",
+		Arrest = 0.2,
+		Fine = 25
+	},
+	[24] = {
+		Name = "Disturbing the peace",
+		Arrest = 5,
+		Fine = 100
+	},
+	[25] = {
+		Name = "Reckless driving",
+		Arrest = 10,
+		Fine = 50
+	},
+	[26] = {
+		Name = "Failure to yield",
+		Arrest = 10,
+		Fine = 25
+	},
+	[27] = {Name = "Speeding", Fine = 80},
+	[28] = {
+		Name = "Running a red light",
+		Fine = 50
+	},
+	[29] = {
+		Name = "Running a stop sign",
+		Fine = 50
+	},
+	[30] = {
+		Name = "Dangerous lane change",
+		Fine = 50
+	},
+	[31] = {
+		Name = "Discharging a firearm in city limits",
+		Arrest = 15,
+		Fine = 200
+	},
+	[32] = {
+		Name = "Obstructing traffic",
+		Arrest = 15,
+		Fine = 50
+	},
+	[33] = {
+		Name = "Vandalism",
+		Arrest = 5,
+		Fine = 25
+	},
+	[34] = {
+		Name = "Failure to pay citation",
+		Arrest = 10
+	},
+	[35] = {
+		Name = "Brandishing a firearm in city limits",
+		Arrest = 10,
+		Fine = 150
+	},
+	[36] = {
+		Name = "Failure to comply",
+		Fine = 75
+	},
+	[37] = {
+		Name = "Contempt of court",
+		Arrest = 5,
+		Fine = 150
+	},
+	[38] = {
+		Name = "Failure to appear",
+		Arrest = 5
+	},
+	[39] = {
+		Name = "First-degree murder",
+		Arrest = 35
+	},
+	[40] = {
+		Name = "Illegal parking",
+		Fine = 50
+	},
+	[41] = {
+		Name = "Driving without headlights at night",
+		Fine = 50
+	},
+	[42] = {
+		Name = "Solicitation to commit a crime",
+		Arrest = 6
+	},
+	[43] = {
+		Name = "Conspiracy to commit a crime",
+		Arrest = 10,
+		Class = 2
+	},
+	[44] = {
+		Name = "Attempt to commit a crime",
+		Arrest = 14,
+		Class = 2
+	},
+	[45] = {
+		Name = "Criminal threats",
+		Arrest = 15
+	},
+	[46] = {
+		Name = "Concealing/destroying evidence",
+		Arrest = 5,
+		Fine = 300
+	},
+	[47] = {
+		Name = "Aiding and abetting",
+		Arrest = 10
+	},
+	[48] = {
+		Name = "Open carrying a long gun in city limits",
+		Arrest = 10,
+		Fine = 125
+	},
+	[49] = {
+		Name = "Unlawful dealing of a firearm",
+		Arrest =  12,
+		Fine = 350,
+		Class = 2
+	},
+	[50] = {
+		Name = "Unlicensed possession of a firearm",
+		Arrest = 10,
+		Fine = 300
+	},
+	[51] = {
+		Name = "Unauthorised possession of a high-capacity magazine",
+		Arrest = 15,
+		Fine = 175
+	},
+	[52] = {
+		Name = "Contempt of Senate",
+		Arrest = 5,
+		Fine = 175
+	},
+	[53] = {
+		Name = "Disorderly conduct",
+		Arrest = 10,
+		Fine = 150
+	},
+	[54] = {
+		Name = "Off-roading in an incorporated area",
+		Arrest = 5,
+		Fine = 90
+	},
+	[55] = {
+		Name = "Brandishing a firearm within an area of natural beauty",
+		Arrest = 5,
+		Fine = 150
+	},
+	[56] = {
+		Name = "Discharging a firearm within an area of natural beauty",
+		Arrest = 10,
+		Fine = 200
+	},
+	[57] = {
+		Name = "Misconduct", 
+		Arrest = 5, 
+		Fine = 250, 
+		Class = 1	
+	},
+	[58] = {
+		Name = "Gross Misconduct", 
+		Arrest = 15, 
+		Fine = 500, 
+		Class = 2
+	},
+	[59] = {
+		Name = "Felony Misconduct", 
+		Arrest = 10, 
+		Class = 2
+	},
+	[60] = {
+		Name = "Unlicensed possession of non-civilian equipment", 
+		Arrest = 10, 
+		Fine = 300, 
+		Class = 1
+	},
+	[61] = {
+		Name = "Carrying a firearm in a firearm-free zone", 
+		Arrest = 17, 
+		Fine = 225, 
+		Class = 1
+	},
+	[62] = {
+		Name = "Espionage", 
+		Arrest =  20, 
+		Class = 2
+	},
+	[63] = {
+		Name = "Simple Espionage", 
+		Arrest =  20, 
+		Class = 1
+	},
+}
+return Crimes
+database.delearship
+-- Script GUID: {5BD7ABD4-6A6B-4370-B31C-86FC0D513682}
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	Plymouth = {
+		Name = "Verdelac Vehicles", 
+		Accepts = 3, 
+		Vehicles = { { "Carpathian", 130 }, { "Crusader", 60 }, { "CrusaderC", 50 }, { "CabCrusaderC", 70 }, { "CabCrusader", 55 }, { "Conveyor", 80 }, { "Chariot", 25 }, { "ChariotIntrepid", 38 }, { "ChariotExplorer", 50 }, { "ChariotUtility", 43 }, { "ElDorado", 75 }, { "StretchCrusader", 90 }, { "Jackal", 70 }, { "TaxiJackal", 80 }, { "ElDorado4x4", 85 }, { "TrailDestroyer", 75 } }
+	}, 
+	WestPoint = {
+		Name = "West Point Vehicles", 
+		Accepts = 3, 
+		Vehicles = { { "Crusader", 55 }, { "CrusaderC", 45 }, { "Conveyor", 77 }, { "Chariot", 28 }, { "ChariotIntrepid", 36 }, { "ElDorado", 52 }, { "Jackal", 68 }, { "GolfCart", 25 } }
+	}, 
+	Lander = {
+		Name = "Bad Bill's 'Used' Cars", 
+		Accepts = 3, 
+		Vehicles = { { "CrusaderC", 45 }, { "Crusader", 62 }, { "CabCrusader", 56 }, { "Conveyor", 82 }, { "Chariot", 28 }, { "ChariotIntrepid", 40 }, { "ChariotUtility", 45 }, { "ElDorado", 78 }, { "ElDorado4x4", 88 }, { "TrailDestroyer", 80 } }
+	}
+};
+
+database.easingstyles
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+local l__math_pow__1 = math.pow;
+local function u2(p1, p2, p3, p4)
+	p1 = p1 / p4;
+	return -p3 * p1 * (p1 - 2) + p2;
+end;
+local function u3(p5, p6, p7, p8)
+	p5 = p5 / p8;
+	return p7 * l__math_pow__1(p5, 2) + p6;
+end;
+local function u4(p9, p10, p11, p12)
+	p9 = p9 / p12 - 1;
+	return p11 * (l__math_pow__1(p9, 3) + 1) + p10;
+end;
+local function u5(p13, p14, p15, p16)
+	p13 = p13 / p16;
+	return p15 * l__math_pow__1(p13, 3) + p14;
+end;
+local function u6(p17, p18, p19, p20)
+	p17 = p17 / p20 - 1;
+	return -p19 * (l__math_pow__1(p17, 4) - 1) + p18;
+end;
+local function u7(p21, p22, p23, p24)
+	p21 = p21 / p24;
+	return p23 * l__math_pow__1(p21, 4) + p22;
+end;
+local function u8(p25, p26, p27, p28)
+	p25 = p25 / p28 - 1;
+	return p27 * (l__math_pow__1(p25, 5) + 1) + p26;
+end;
+local function u9(p29, p30, p31, p32)
+	p29 = p29 / p32;
+	return p31 * l__math_pow__1(p29, 5) + p30;
+end;
+local l__math_pi__10 = math.pi;
+local l__math_cos__11 = math.cos;
+local l__math_sin__12 = math.sin;
+local function u13(p33, p34, p35, p36)
+	return p35 * l__math_sin__12(p33 / p36 * (l__math_pi__10 / 2)) + p34;
+end;
+local function u14(p37, p38, p39, p40)
+	return -p39 * l__math_cos__11(p37 / p40 * (l__math_pi__10 / 2)) + p39 + p38;
+end;
+local function u15(p41, p42, p43, p44)
+	if p41 == p44 then
+		return p42 + p43;
+	end;
+	return p43 * 1.001 * (-l__math_pow__1(2, -10 * p41 / p44) + 1) + p42;
+end;
+local function u16(p45, p46, p47, p48)
+	if p45 == 0 then
+		return p46;
+	end;
+	return p47 * l__math_pow__1(2, 10 * (p45 / p48 - 1)) + p46 - p47 * 0.001;
+end;
+local l__math_sqrt__17 = math.sqrt;
+local function u18(p49, p50, p51, p52)
+	p49 = p49 / p52 - 1;
+	return p51 * l__math_sqrt__17(1 - l__math_pow__1(p49, 2)) + p50;
+end;
+local function u19(p53, p54, p55, p56)
+	p53 = p53 / p56;
+	return -p55 * (l__math_sqrt__17(1 - l__math_pow__1(p53, 2)) - 1) + p54;
+end;
+local l__math_abs__20 = math.abs;
+local l__math_asin__21 = math.asin;
+local function u22(p57, p58, p59, p60, p61, p62)
+	local v1 = nil
+	if p57 == 0 then
+		return p58;
+	end;
+	p57 = p57 / p60;
+	if p57 == 1 then
+		return p58 + p59;
+	end;
+	if not p62 then
+		p62 = p60 * 0.3;
+	end;
+	if not p61 or p61 < l__math_abs__20(p59) then
+		p61 = p59;
+		 v1 = p62 / 4;
+	else
+		v1 = p62 / (2 * l__math_pi__10) * l__math_asin__21(p59 / p61);
+	end;
+	return p61 * l__math_pow__1(2, -10 * p57) * l__math_sin__12((p57 * p60 - v1) * (2 * l__math_pi__10) / p62) + p59 + p58;
+end;
+local function u23(p63, p64, p65, p66, p67, p68)
+	local v2 = nil
+	if p63 == 0 then
+		return p64;
+	end;
+	p63 = p63 / p66;
+	if p63 == 1 then
+		return p64 + p65;
+	end;
+	if not p68 then
+		p68 = p66 * 0.3;
+	end;
+	if not p67 or p67 < l__math_abs__20(p65) then
+		p67 = p65;
+		 v2 = p68 / 4;
+	else
+		v2 = p68 / (2 * l__math_pi__10) * l__math_asin__21(p65 / p67);
+	end;
+	p63 = p63 - 1;
+	return -(p67 * l__math_pow__1(2, 10 * p63) * l__math_sin__12((p63 * p66 - v2) * (2 * l__math_pi__10) / p68)) + p64;
+end;
+local function u24(p69, p70, p71, p72, p73)
+	if not p73 then
+		p73 = 1.70158;
+	end;
+	p69 = p69 / p72 - 1;
+	return p71 * (p69 * p69 * ((p73 + 1) * p69 + p73) + 1) + p70;
+end;
+local function u25(p74, p75, p76, p77, p78)
+	if not p78 then
+		p78 = 1.70158;
+	end;
+	p74 = p74 / p77;
+	return p76 * p74 * p74 * ((p78 + 1) * p74 - p78) + p75;
+end;
+local function u26(p79, p80, p81, p82)
+	p79 = p79 / p82;
+	if p79 < 0.36363636363636365 then
+		return p81 * (7.5625 * p79 * p79) + p80;
+	end;
+	if p79 < 0.7272727272727273 then
+		p79 = p79 - 0.5454545454545454;
+		return p81 * (7.5625 * p79 * p79 + 0.75) + p80;
+	end;
+	if p79 < 0.9090909090909091 then
+		p79 = p79 - 0.8181818181818182;
+		return p81 * (7.5625 * p79 * p79 + 0.9375) + p80;
+	end;
+	p79 = p79 - 0.9545454545454546;
+	return p81 * (7.5625 * p79 * p79 + 0.984375) + p80;
+end;
+local function u27(p83, p84, p85, p86)
+	return p85 - u26(p86 - p83, 0, p85, p86) + p84;
+end;
+return {
+	linear = function(p87, p88, p89, p90)
+		return p89 * p87 / p90 + p88;
+	end, 
+	inQuad = u3, 
+	outQuad = u2, 
+	inOutQuad = function(p91, p92, p93, p94)
+		p91 = p91 / p94 * 2;
+		if p91 < 1 then
+			return p93 / 2 * l__math_pow__1(p91, 2) + p92;
+		end;
+		return -p93 / 2 * ((p91 - 1) * (p91 - 3) - 1) + p92;
+	end, 
+	outInQuad = function(p95, p96, p97, p98)
+		if p95 < p98 / 2 then
+			return u2(p95 * 2, p96, p97 / 2, p98);
+		end;
+		return u3(p95 * 2 - p98, p96 + p97 / 2, p97 / 2, p98);
+	end, 
+	inCubic = u5, 
+	outCubic = u4, 
+	inOutCubic = function(p99, p100, p101, p102)
+		p99 = p99 / p102 * 2;
+		if p99 < 1 then
+			return p101 / 2 * p99 * p99 * p99 + p100;
+		end;
+		p99 = p99 - 2;
+		return p101 / 2 * (p99 * p99 * p99 + 2) + p100;
+	end, 
+	outInCubic = function(p103, p104, p105, p106)
+		if p103 < p106 / 2 then
+			return u4(p103 * 2, p104, p105 / 2, p106);
+		end;
+		return u5(p103 * 2 - p106, p104 + p105 / 2, p105 / 2, p106);
+	end, 
+	inQuart = u7, 
+	outQuart = u6, 
+	inOutQuart = function(p107, p108, p109, p110)
+		p107 = p107 / p110 * 2;
+		if p107 < 1 then
+			return p109 / 2 * l__math_pow__1(p107, 4) + p108;
+		end;
+		p107 = p107 - 2;
+		return -p109 / 2 * (l__math_pow__1(p107, 4) - 2) + p108;
+	end, 
+	outInQuart = function(p111, p112, p113, p114)
+		if p111 < p114 / 2 then
+			return u6(p111 * 2, p112, p113 / 2, p114);
+		end;
+		return u7(p111 * 2 - p114, p112 + p113 / 2, p113 / 2, p114);
+	end, 
+	inQuint = u9, 
+	outQuint = u8, 
+	inOutQuint = function(p115, p116, p117, p118)
+		p115 = p115 / p118 * 2;
+		if p115 < 1 then
+			return p117 / 2 * l__math_pow__1(p115, 5) + p116;
+		end;
+		p115 = p115 - 2;
+		return p117 / 2 * (l__math_pow__1(p115, 5) + 2) + p116;
+	end, 
+	outInQuint = function(p119, p120, p121, p122)
+		if p119 < p122 / 2 then
+			return u8(p119 * 2, p120, p121 / 2, p122);
+		end;
+		return u9(p119 * 2 - p122, p120 + p121 / 2, p121 / 2, p122);
+	end, 
+	inSine = u14, 
+	outSine = u13, 
+	inOutSine = function(p123, p124, p125, p126)
+		return -p125 / 2 * (l__math_cos__11(l__math_pi__10 * p123 / p126) - 1) + p124;
+	end, 
+	outInSine = function(p127, p128, p129, p130)
+		if p127 < p130 / 2 then
+			return u13(p127 * 2, p128, p129 / 2, p130);
+		end;
+		return u14(p127 * 2 - p130, p128 + p129 / 2, p129 / 2, p130);
+	end, 
+	inExpo = u16, 
+	outExpo = u15, 
+	inOutExpo = function(p131, p132, p133, p134)
+		if p131 == 0 then
+			return p132;
+		end;
+		if p131 == p134 then
+			return p132 + p133;
+		end;
+		p131 = p131 / p134 * 2;
+		if p131 < 1 then
+			return p133 / 2 * l__math_pow__1(2, 10 * (p131 - 1)) + p132 - p133 * 0.0005;
+		end;
+		p131 = p131 - 1;
+		return p133 / 2 * 1.0005 * (-l__math_pow__1(2, -10 * p131) + 2) + p132;
+	end, 
+	outInExpo = function(p135, p136, p137, p138)
+		if p135 < p138 / 2 then
+			return u15(p135 * 2, p136, p137 / 2, p138);
+		end;
+		return u16(p135 * 2 - p138, p136 + p137 / 2, p137 / 2, p138);
+	end, 
+	inCirc = u19, 
+	outCirc = u18, 
+	inOutCirc = function(p139, p140, p141, p142)
+		p139 = p139 / p142 * 2;
+		if p139 < 1 then
+			return -p141 / 2 * (l__math_sqrt__17(1 - p139 * p139) - 1) + p140;
+		end;
+		p139 = p139 - 2;
+		return p141 / 2 * (l__math_sqrt__17(1 - p139 * p139) + 1) + p140;
+	end, 
+	outInCirc = function(p143, p144, p145, p146)
+		if p143 < p146 / 2 then
+			return u18(p143 * 2, p144, p145 / 2, p146);
+		end;
+		return u19(p143 * 2 - p146, p144 + p145 / 2, p145 / 2, p146);
+	end, 
+	inElastic = u23, 
+	outElastic = u22, 
+	inOutElastic = function(p147, p148, p149, p150, p151, p152)
+		local v3 = nil
+		if p147 == 0 then
+			return p148;
+		end;
+		p147 = p147 / p150 * 2;
+		if p147 == 2 then
+			return p148 + p149;
+		end;
+		if not p152 then
+			p152 = p150 * 0.44999999999999996;
+		end;
+		if not p151 then
+			p151 = 0;
+		end;
+		if not p151 or p151 < l__math_abs__20(p149) then
+			p151 = p149;
+			 v3 = p152 / 4;
+		else
+			v3 = p152 / (2 * l__math_pi__10) * l__math_asin__21(p149 / p151);
+		end;
+		if p147 < 1 then
+			p147 = p147 - 1;
+			return -0.5 * (p151 * l__math_pow__1(2, 10 * p147) * l__math_sin__12((p147 * p150 - v3) * (2 * l__math_pi__10) / p152)) + p148;
+		end;
+		p147 = p147 - 1;
+		return p151 * l__math_pow__1(2, -10 * p147) * l__math_sin__12((p147 * p150 - v3) * (2 * l__math_pi__10) / p152) * 0.5 + p149 + p148;
+	end, 
+	outInElastic = function(p153, p154, p155, p156, p157, p158)
+		if p153 < p156 / 2 then
+			return u22(p153 * 2, p154, p155 / 2, p156, p157, p158);
+		end;
+		return u23(p153 * 2 - p156, p154 + p155 / 2, p155 / 2, p156, p157, p158);
+	end, 
+	inBack = u25, 
+	outBack = u24, 
+	inOutBack = function(p159, p160, p161, p162, p163)
+		if not p163 then
+			p163 = 1.70158;
+		end;
+		p163 = p163 * 1.525;
+		p159 = p159 / p162 * 2;
+		if p159 < 1 then
+			return p161 / 2 * (p159 * p159 * ((p163 + 1) * p159 - p163)) + p160;
+		end;
+		p159 = p159 - 2;
+		return p161 / 2 * (p159 * p159 * ((p163 + 1) * p159 + p163) + 2) + p160;
+	end, 
+	outInBack = function(p164, p165, p166, p167, p168)
+		if p164 < p167 / 2 then
+			return u24(p164 * 2, p165, p166 / 2, p167, p168);
+		end;
+		return u25(p164 * 2 - p167, p165 + p166 / 2, p166 / 2, p167, p168);
+	end, 
+	inBounce = u27, 
+	outBounce = u26, 
+	inOutBounce = function(p169, p170, p171, p172)
+		if p169 < p172 / 2 then
+			return u27(p169 * 2, 0, p171, p172) * 0.5 + p170;
+		end;
+		return u26(p169 * 2 - p172, 0, p171, p172) * 0.5 + p171 * 0.5 + p170;
+	end, 
+	outInBounce = function(p173, p174, p175, p176)
+		if p173 < p176 / 2 then
+			return u26(p173 * 2, p174, p175 / 2, p176);
+		end;
+		return u27(p173 * 2 - p176, p174 + p175 / 2, p175 / 2, p176);
+	end
+};
+
+
+database.elections
+--SynapseX Decompiler
+
+local Elections = {}
+local times = {Start = 1, End = 3}
+local cTitle = {"Choice"}
+local senTitle = {"Senator"}
+local daTitle = {
+	"District Attorney"
+}
+local mfColor = Color3.fromRGB(49, 66, 85)
+local perms = {"Citizen"}
+local options = {
+	[1] = {
+		{"Yes"},
+		cTitle
+	},
+	[2] = {
+		{"No"},
+		cTitle
+	}
+}
+Elections.SENATE201907 = {
+	Name = "Mayflower State Senate By-election",
+	Roles = perms,
+	Times = times,
+	Places = 1,
+	Options = {
+		[1] = {
+			{
+				"AdamStratton"
+			},
+			senTitle
+		},
+		[2] = {
+			{
+				"Fyodor_Karamazov"
+			},
+			senTitle
+		},
+		[3] = {
+			{
+				"PhosilioUnderwood"
+			},
+			senTitle
+		},
+		[4] = {
+			{
+				"policetonyR"
+			},
+			senTitle
+		},
+		[5] = {
+			{
+				"PvPParasite"
+			},
+			senTitle
+		},
+		[6] = {
+			{
+				"SirSamuelSmith"
+			},
+			senTitle
+		},
+		[7] = {
+			{
+				"SuperstarOnMinecraft"
+			},
+			senTitle
+		},
+		[8] = {
+			{
+				"TotalJSyndicate"
+			},
+			senTitle
+		},
+		[9] = {
+			{"Uh_Cam"},
+			senTitle
+		},
+		[10] = {
+			{
+				"zombielandrock"
+			},
+			senTitle
+		}
+	},
+	Type = "AV",
+	Display = "1",
+	Color = mfColor
+}
+
+return Elections
+
+database.gateways
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	Default = {
+		VelocityOpen = 0.06, 
+		VelocityClose = 0.1, 
+		Angle = 85, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 40, 
+		SoundMinDistance = 5, 
+		AutoClose = 4
+	}, 
+	FireBayTall = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 115, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	BusBayDoor = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	MPBSGarageDoor = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	FireBayShort = {
+		VelocityOpen = 0.01, 
+		VelocityClose = 0.01, 
+		Angle = 115, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	LanderParkGate = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 0, 
+		SoundMinDistance = 0
+	}, 
+	NGGate = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 90, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 0, 
+		SoundMinDistance = 0
+	}, 
+	SHParkingGate = {
+		VelocityOpen = 0.05, 
+		VelocityClose = 0.05, 
+		Angle = 90, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 40, 
+		SoundMinDistance = 5
+	}
+};
+
+database.items
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	Default = {
+		VelocityOpen = 0.06, 
+		VelocityClose = 0.1, 
+		Angle = 85, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 40, 
+		SoundMinDistance = 5, 
+		AutoClose = 4
+	}, 
+	FireBayTall = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 115, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	BusBayDoor = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	MPBSGarageDoor = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	FireBayShort = {
+		VelocityOpen = 0.01, 
+		VelocityClose = 0.01, 
+		Angle = 115, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 80, 
+		SoundMinDistance = 15
+	}, 
+	LanderParkGate = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 100, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 0, 
+		SoundMinDistance = 0
+	}, 
+	NGGate = {
+		VelocityOpen = 0.005, 
+		VelocityClose = 0.005, 
+		Angle = 90, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 0, 
+		SoundMinDistance = 0
+	}, 
+	SHParkingGate = {
+		VelocityOpen = 0.05, 
+		VelocityClose = 0.05, 
+		Angle = 90, 
+		SoundOpen = 205042484, 
+		SoundClose = 205042586, 
+		SoundMaxDistance = 40, 
+		SoundMinDistance = 5
+	}
+};
+database.lc
+																																																																																																																			-- Script GUID: {94C48198-3009-4269-9C79-6D5E0EB074D4}
+-- Decompiled with the Synapse X Luau decompiler.
+
+return { {
+	Asset = "DelinoR21", 
+	Name = "Delino R21", 
+	Section = "Primary", 
+	Mag = "Mag55610", 
+	MagQuanity = 12
+}, {
+	Asset = "DelinoR21AC", 
+	Name = "Delino R21A", 
+	Section = "Primary", 
+	Mag = "Mag556", 
+	MagQuanity = 10
+}, {}, {
+	Asset = "DelinoR21M", 
+	Name = "Delino R21M", 
+	Section = "Primary", 
+	Mag = "Mag556", 
+	MagQuanity = 10
+}, {
+	Asset = "Hawth500C", 
+	Name = "Hawthorn 500", 
+	Section = "Primary", 
+	Mag = "Mag12G", 
+	MagQuanity = 10
+}, {
+	Asset = "None", 
+	Name = "None", 
+	Section = "Secondary" --Primary
+}, {
+	Asset = "Benn17C", 
+	Name = "Bennetti 17", 
+	Section = "Secondary", 
+	Mag = "MagB17", 
+	MagQuanity = 10
+},{
+	Asset = "Delino1711", 
+	Name = "Delino 1711", 
+	Section = "Secondary", 
+	Mag = "Mag45", 
+	MagQuanity = 12
+}, {
+	Asset = "DelinoDef", 
+	Name = "Delino Defender", 
+	Section = "Secondary", 
+	Mag = "Mag44", 
+	MagQuanity = 9
+}, {
+	Asset = "DelinoSpec", 
+	Name = "Delino Special", 
+	Section = "Secondary", 
+	Mag = "Mag44", 
+	MagQuanity = 9
+}, {
+	Asset = "None", 
+	Name = "None", 
+	Section = "Primary"
+ 
+} };
+
+database.ploppables
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {};
+local l__Ploppables__2 = game:GetService("ReplicatedStorage").Ploppables;
+v1.Cone = {
+	Name = "Cone", 
+	PlayerLimit = 40, 
+	Asset = l__Ploppables__2.Cone, 
+	Priority = 1
+};
+v1.FireBarrier = {
+	Name = "Fire Barrier", 
+	PlayerLimit = 20, 
+	Asset = l__Ploppables__2.FireBarrier, 
+	Priority = 1
+};
+v1.PoliceBarrier = {
+	Name = "Police Barrier", 
+	PlayerLimit = 20, 
+	Asset = l__Ploppables__2.PoliceBarrier, 
+	Priority = 3
+};
+v1.NGBarrier = {
+	Name = "NG Barrier", 
+	PlayerLimit = 20, 
+	Asset = l__Ploppables__2.NGBarrier, 
+	Priority = 2
+};
+v1.PWBarrier = {
+	Name = "Parks Barrier", 
+	PlayerLimit = 20, 
+	Asset = l__Ploppables__2.PWBarrier, 
+	Priority = 1
+};
+return v1;
+
+database.roles
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = require(script.Parent.Teams);
+local v2 = { 1, 2, 4, 5, 6, 7, 8, 9, 12, 14, 16, 17, };
+local v3 = {
+	Inmate = {
+		AbsoluteIncome = true, 
+		Income = 2, 
+		TeamCriteria = { 5 },
+		Name = "Inmate"
+	}, 
+	LETI = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 7 }
+		},
+		Name = "LETI"
+	}, 
+	ED = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanSpawnVehicle = { "Hankmobile" }
+		},
+		Name = "ED"
+	}, 
+	SS = {
+		GroupCriteria = { { 5778965, 125 } }, 
+		Permissions = {
+			CanSpawnVehicle = { "DevConveyor" }
+		},
+		Name = "SS"
+	}, 
+	PEPT = {
+		Permissions = {
+			CanSpawnVehicle = { "Hankmobile" }
+		},
+		Name = "PEPT"
+	}, 
+	LawEnforcement = {
+		GroupCriteria = { { 4637939 }, { 3632587 }, { 9442050 }, { 9442043 }, { 9442023 }, { 9442116 }
+		},
+		Name = "LawEnforcement"
+	},
+	NHTAGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 16 }
+		},
+		Name = "NHTAGroup"
+	}, 
+	NHTATeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 16 }, 
+		Permissions = {
+			CanGetItems = { "Flashlight", "Cone", "Radio" }, 
+			CanChangeTeam = { 16 }, 
+			CanSpawnVehicle = { "NHTALandCrawlerTD","NHTALandCrawlerDD","NHTALandCrawler", "NHTAUtility" }, 
+			CanUseChannel = { "NHTA", "Global" }
+		},
+		Name = "NHTATeam"
+	}, 
+	PBSGroup = {
+		GroupCriteria = { { 9441992 } }, 
+		Permissions = {
+			CanChangeTeam = { 17 }
+		},
+		Name = "PBSGroup"
+	}, 
+	PBSTeam = {
+		Income = 80, 
+		GroupCriteria = { { 9441992 } }, 
+		TeamCriteria = { 17 }, 
+		Permissions = {
+			CanChangeTeam = { 17 }, 
+			CanSpawnVehicle = { "PBSConveyor" }
+		},
+		Name = "PBSTeam"
+	}, 
+	MNGGroup = {
+		GroupCriteria = {
+			{33613424}, -- First group
+			{5778965}   -- Second group
+		},
+		Permissions = {
+			CanChangeTeam = { 15 }
+		},
+		Name = "MNGGroup"
+	}, 
+	MNGTeam = {
+		Income = 80, 
+		GroupCriteria = {
+			{33613424}, -- First group
+			{5778965}   -- Second group
+		},
+		TeamCriteria = { 15 }, 
+		Permissions = {
+			CanGetItems = { "Flashlight", "Radio", "Baton" }, 
+			CanChangeTeam = { 15 }, 
+			CanExemptKarma = true, 
+			CanUseChannel = { "MNG", "ES1", "Global" }
+		},
+		Name = "MNGTeam"
+	}, 
+	MNGTrained = {
+		Income = 80, 
+		GroupCriteria = {
+			{33613424}, -- First group
+			{5778965}   -- Second group
+		},
+		TeamCriteria = { 15 }, 
+		Permissions = {
+			CanGetItems = { "Benn17", "DelinoR21M", "Mag556", "MagB17", "Cone", "NGBarrier", "HandcuffSet" }, 
+			CanSpawnVehicle = { "NGElDorado4x4", "NGCrusaderC", "NGCrusader", "NGUtility"  }, 
+			CanCuff = true
+		},
+		Name = "MNGTrained"
+
+	}, 
+	MNGMid = {
+		Income = 85, 
+		TeamCriteria = { 15 }, 
+		GroupCriteria = { { 5778965, 75 } 
+		}, 
+		Name = "MNGMid"
+	},
+
+	MNGHigh = {
+		Income = 87, 
+		TeamCriteria = { 15 }, 
+		GroupCriteria = { { 5778965, 165 } },
+		Name = "MNGHigh"
+	}, 
+	MNGMP = {
+		Income = 87, 
+		GroupCriteria = { { 5778965, 144, true }, { 5778965, 20, true } }, 
+		TeamCriteria = { 15 }, 
+		Permissions = {
+			CanSpawnVehicle = { "NGCrusaderCMP", "NGCrusaderMP", "UnmarkedCrusaderC", "UnmarkedCrusader" }, 
+			CanGetItems = { "MagCart", "TI26" }, 
+			CanUseChannel = { "LE1", "LE2", "ES1" }, 
+			CanInteractTeams = { 1, 2, 4, 5, 6, 7, 8, 9, 12, 14, 15, 16, 17 }, 
+			CanArrest = true, 
+			CanSearch = true,
+			CanFine  = true
+		},
+		Name = "MNGMP"
+	},
+	PWGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 14 }
+		},
+		Name = "PWGroup"
+	}, 
+
+	Beloved = {
+		DataCriteria = { "Beloved" },
+		Permissions = {
+			CanGetItems = { "Delino1711", "Mag45" }, 
+		},
+		Name = "Beloved"
+	},
+	PWTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 14 }, 
+		Permissions = {
+			CanGetItems = { "Flashlight", "Radio" }, 
+			CanChangeTeam = { 14 }, 
+			CanUseChannel = { "PW", "ES1", "Global" }, 
+			CanExemptKarma = true, 
+			CanSpawnVehicle = { "PWIntrepid" }
+		},
+		Name = "PWTeam"
+	}, 
+	PWLowerMid = {
+		GroupCriteria = { { 5778965, 43 } }, 
+		TeamCriteria = { 14 }, 
+		Permissions = {
+			CanGetItems = { "Baton" }
+		},
+		Name = "PWLowerMid"
+	}, 
+	PWMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 86 } }, 
+		TeamCriteria = { 14 }, 
+		Permissions = {
+			CanGetItems = { "Hawth500", "Mag12G", "Cone", "PWBarrier" }
+		},
+		Name = "PWMid"
+
+	}, 
+	--PWLEO = {
+	--	Income = 85, 
+	--	GroupCriteria = { { 9442116, 8 } }, 
+	--	TeamCriteria = { 14 }, 
+	--	Permissions = {
+	--		CanGetItems = { "Benn17", "MagB17", "MagCart", "TI26", "HandcuffSet" },
+	--		CanSpawnVehicle = { "PWIntrepidLEO","PWJackalLEO" },
+	--		CanInteractTeams = v2, 
+	--		CanArrest = true, 
+	--		CanCuff = true, 
+	--		CanSearch = true,
+	--		CanFine  = true,
+	--	},
+	--	Name = "PWLEO"
+
+	--},
+	PWHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 172 } }, 
+		TeamCriteria = { 14 }, 
+		Permissions = {
+			CanSpawnVehicle = { "PWJackal" }
+		},
+		Name = "PWHigh"
+	}, 
+	SheriffGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 1 }
+		},
+		Name = "SheriffGroup"
+	}, 
+	SheriffTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 2 }, 
+		Permissions = {
+			CanChangeTeam = { 1 }, 
+			CanUseChannel = { "NHCSO", "LE1", "LE2", "ES1", "Global" }, 
+			CanGetItems = { "Flashlight", "Baton", "Radio", "HandcuffSet", "RadarGun" }, 
+			CanInteractTeams = v2, 
+			CanSearch = true, 
+			CanCuff = true, 
+			CanExemptKarma = true, 
+			CanSpawnVehicle = { "SheriffConveyor" }
+		},
+		Name = "SheriffTeam"
+	}, 
+	SheriffLEO = {
+		GroupCriteria = { { 5778965, 10 } }, 
+		TeamCriteria = { 3 }, 
+		Permissions = {
+			CanChangeTeam = { 1 }, 
+			CanGetItems = { "Hawth500", "Benn17", "TI26", "DelinoR21A", "Cone", "PoliceBarrier", "Mag12G", "Mag556", "MagCart", "MagB17" }, 
+			CanArrest = true, 
+			CanFine = true, 
+			CanSpawnVehicle = {"SheriffCrusaderS","SheriffChariotSup","SheriffChariot", "SheriffCrusaderC", "SheriffJackal", "SheriffCrusaderCS", "UnmarkedCrusaderC", "UnmarkedCrusader", "SheriffCrusader", "SheriffUtility" }
+		},
+		Name = "SheriffLEO"
+	}, 
+	SheriffMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 220 } }, 
+		TeamCriteria = { 3 }, 
+		Permissions = {
+			CanSpawnVehicle = { "UnmarkedJackalS","UnmarkedTaxiJackal","SheriffChariotSup"}, 
+			CanRevokeLicense = true
+		},
+		Name = "SheriffMid"
+	}, 
+	SheriffHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 221 } }, 
+		TeamCriteria = { 3 }, 
+		Permissions = {
+			CanInteractTeams = { 3 }
+		},
+		Name = "SheriffHigh"
+	}, 
+
+	MSPGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 1 }
+		},
+		Name = "MSPGroup"
+	}, 
+	MSPTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 11 }, 
+		Permissions = {
+			CanChangeTeam = { 1 }, 
+			CanUseChannel = { "MSP", "LE1", "LE2", "ES1", "Global" }, 
+			CanGetItems = { "Hawth500", "Benn17", "TI26", "Flashlight", "Baton", "Radio", "DelinoR21A", "Cone", "PoliceBarrier", "HandcuffSet", "Mag12G", "Mag556", "MagCart", "MagB17", "RadarGun" }, 
+			CanInteractTeams = v2, 
+			CanCuff = true, 
+			CanArrest = true, 
+			CanSearch = true, 
+			CanExemptKarma = true, 
+			CanFine = true, 
+			CanSpawnVehicle = { "MSPChariot","MSPJackal", "UnmarkedJackal", "MSPCrusaderC", "MSPCrusaderCS", "UnmarkedCrusaderC", "MSPCrusader", "MSPCrusaderS", "UnmarkedCrusader", "MSPUtility" }
+		},
+		Name = "MSPTeam"
+	}, 
+	MSPMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 125 } }, 
+		TeamCriteria = { 11 }, 
+		Permissions = {
+			CanRevokeLicense = true
+		},
+		Name = "MSPMid"
+	}, 
+	MSPHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 254 } }, 
+		TeamCriteria = { 11 }, 
+		Permissions = {
+			CanInteractTeams = { 11 }
+		},
+		Name = "MSPHigh"
+	}, 
+	LPDGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 1 }
+		},
+		Name = "LPDGroup"
+	}, 
+	LPDTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 13 }, 
+		Permissions = {
+			CanChangeTeam = { 1 }, 
+			CanUseChannel = { "LPD", "LE1", "LE2", "ES1", "Global" }, 
+			CanGetItems = { "Hawth500", "Benn17", "TI26", "Flashlight", "Baton", "Radio", "DelinoR21A", "Cone", "PoliceBarrier", "HandcuffSet", "Mag12G", "Mag556", "MagCart", "MagB17", "RadarGun" }, 
+			CanInteractTeams = v2, 
+			CanCuff = true, 
+			CanArrest = true, 
+			CanExemptKarma = true, 
+			CanSearch = true, 
+			CanFine = true, 
+			CanSpawnVehicle = { "LPDCrusaderS","LPDJackal", "UnmarkedCrusaderC", "LPDCrusaderC", "LPDCrusaderCS", "UnmarkedCrusader", "LPDCrusader", "LPDUtility" }
+		},
+		Name = "LPDTeam"
+	}, 
+	LPDMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 130 } }, 
+		TeamCriteria = { 13 }, 
+		Permissions = {
+			CanRevokeLicense = true
+		},
+		Name = "LPDMid"
+	}, 
+	LPDHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 254 } }, 
+		TeamCriteria = { 13 }, 
+		Permissions = {
+			CanInteractTeams = { 13 }
+		},
+		Name = "LPDHigh"
+
+	}, 
+	PPDGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 10 }
+		},
+		Name = "PPDGroup"
+	}, 
+	PPDTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 10 }, 
+		Permissions = {
+			CanChangeTeam = { 10 }, 
+			CanUseChannel = { "PPD", "LE1", "LE2", "ES1", "Global" }, 
+			CanGetItems = { "Hawth500", "Benn17", "TI26", "Flashlight", "Baton", "Radio", "DelinoR21A", "Cone", "PoliceBarrier", "HandcuffSet", "Mag12G", "Mag556", "MagCart", "MagB17", "RadarGun" }, 
+			CanInteractTeams = v2, 
+			CanCuff = true, 
+			CanArrest = true, 
+			CanSearch = true, 
+			CanExemptKarma = true, 
+			CanFine = true, 
+			CanSpawnVehicle = { "PPDConveyor","PPDCrusaderCS","PPDCrusaderS","PPDElDoradoSup","PPDElDorado", "PPDJackal", "UnmarkedCrusaderC", "PPDCrusaderC", "PPDCrusader", "UnmarkedCrusader" }
+		},
+		Name = "PPDTeam"
+	}, 
+	PPDMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 40 } }, 
+		TeamCriteria = { 10 }, 
+		Permissions = {
+			CanSpawnVehicle = {  "PPDElDoradoSup" }, 
+			CanRevokeLicense = true
+		},
+		Name = "PPDMid"
+	}, 
+	PPDHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 80 } }, 
+		TeamCriteria = { 10 }, 
+		Permissions = {
+			CanInteractTeams = { 10 }
+		},
+		Name = "PPDHigh"
+	}, 
+	FireDepGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 4 }
+		},
+		Name = "FireDepGroup"
+
+	}, 
+	FireDepTeam = {
+		Income = 80, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 4 }, 
+		Permissions = {
+			CanChangeTeam = { 4 }, 
+			CanUseChannel = { "Fire Department", "ES1", "Global" }, 
+			CanGetItems = { "Radio", "Flashlight", "Cone", "FireBarrier" }, 
+			CanSpawnVehicle = { "FireBoxAmbulance", "FireAmbulance", "FireElDorado", "FireTruck", "UnmarkedCrusader" }
+		},
+		Name = "FireDepTeam"
+	}, 
+	FireDepMid = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 78 } }, 
+		TeamCriteria = { 4 
+
+		},
+		Name = "FireDepMid"
+
+	}, 
+	FireDepHigh = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 156 } }, 
+		TeamCriteria = { 4 
+
+		},
+		Name = "FireDepHigh"
+	}, 
+	FireDepTop = {
+		GroupCriteria = { { 5778965, 208, true } }, 
+		TeamCriteria = { 4 
+
+		},
+		Name = "FireDepTop"
+	}, 
+	StateGovGroup = {
+		GroupCriteria = { { 5778965, 28 } },
+		Permissions = {
+			CanChangeTeam = { 6 }
+		},
+		Name = "StateGovGroup"
+	}, 
+	StateGovTeam = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 28 } },
+		TeamCriteria = { 6 }, 
+		Permissions = {
+			CanChangeTeam = { 6 }
+
+		},
+		Name = "StateGovTeam"
+	}, 
+	StateGovMid = {
+		Income = 92, 
+		GroupCriteria = { { 5778965, 35 } }, 
+		TeamCriteria = { 6 
+
+		},
+		Name = "StateGovMid"
+	}, 
+	StateGovHigh = {
+		Income = 95, 
+		GroupCriteria = { { 5778965, 49 } }, 
+		TeamCriteria = { 6 }, 
+		Permissions = {
+			CanGetItems = { "Gavel" }
+		},
+		Name = "StateGovHigh"
+	}, 
+	CountyGovGroup = {
+		GroupCriteria = { { 5778965, 26 } }, 
+		Permissions = {
+			CanChangeTeam = { 8 }
+		},
+		Name = "CountyGovGroup"
+	}, 
+	CountyGovTeam = {
+		Income = 85, 
+		GroupCriteria = { { 5778965, 26 } }, 
+		TeamCriteria = { 8 }, 
+		Permissions = {
+			CanChangeTeam = { 8 }
+		},
+		Name = "CountyGovTeam"
+	}, 
+	CountyGovMid = {
+		Income = 89, 
+		GroupCriteria = { { 5778965, 28 } }, 
+		TeamCriteria = { 8 
+
+		},
+		Name = "CountyGovMid"
+	}, 
+	CountyGovHigh = {
+		Income = 92, 
+		GroupCriteria = { { 5778965, 30 } }, 
+		TeamCriteria = { 8 
+
+		},
+		Name = "CountyGovHigh"
+	}, 
+	JudiciaryGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 9 }
+		},
+		Name = "JudiciaryGroup"
+	}, 
+	JudiciaryTeam = {
+		Income = 88, 
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 9 }, 
+		Permissions = {
+			CanChangeTeam = { 2 }
+		},
+		Name = "JudiciaryTeam"
+	}, 
+	JudiciaryMid = {
+		Income = 92, 
+		GroupCriteria = { { 5778965, 3 } }, 
+		TeamCriteria = { 9 }, 
+		Permissions = {
+			CanExpunge = true, 
+			CanRevokeLicense = true, 
+			CanIssueWarrant = true, 
+			CanRule = true, 
+			CanGetItems = { "Gavel" }
+		},
+		Name = "JudiciaryMid"
+	}, 
+	JudicaryHigh = {
+		Income = 95, 
+		GroupCriteria = { { 5778965, 4 } }, 
+		TeamCriteria = { 9 
+
+		},
+		Name = "JudicaryHigh"
+	}, 
+	JudiciaryDistrict = {
+		GroupCriteria = { { 5778965, 5, true }, { 5778965, 6, true } }, 
+		TeamCriteria = { 9 }, 
+		Permissions = {
+			CanSentence = true
+		},
+		Name = "JudiciaryDistrict"
+	}, 
+	JudiciaryJustice = {
+		GroupCriteria = { { 5778965, 192 } }, 
+		TeamCriteria = { 9 }, 
+		Permissions = {
+			CanSentence = true
+		},
+		Name = "JudiciaryJustice"
+	}, 
+	JusticeGroup = {
+		GroupCriteria = { { 5778965 } }, 
+		Permissions = {
+			CanChangeTeam = { 12 }
+		},
+		Name = "JusticeGroup"
+	}, 
+	JusticeTeam = {
+		GroupCriteria = { { 5778965 } }, 
+		TeamCriteria = { 12 }, 
+		Permissions = {
+			CanChangeTeam = { 12 }
+		},
+		Name = "JusticeTeam"
+	}, 
+	JusticeMid = {
+		Income = 88, 
+		GroupCriteria = { { 5778965, 72 } }, 
+		TeamCriteria = { 12 
+
+		},
+		Name = "JusticeMid"
+	}, 
+	JusticeHigh = {
+		Income = 93, 
+		GroupCriteria = { { 5778965, 144 } }, 
+		TeamCriteria = { 12 
+
+		},
+		Name = "JusticeHigh"
+	}, 
+	WeaponLicenseHolder = {
+		DataCriteria = { "WeaponLicense" }, 
+		Permissions = {
+			CanPurchaseLegal = true
+		},
+		Name = "WeaponLicenseHolder"
+	}, 
+	Admin = {
+		DataCriteria = { "Admin" 
+
+		},
+		Name = "Admin"
+	}, 
+	Developer = {
+		DataCriteria = { "Developer" 
+
+		},
+		Name = "Developer"
+	},
+	Moderator = {
+		Income = 90, 
+		DataCriteria = { "Moderator" 
+
+		},
+		Name = "Moderator"
+	}, 
+	Carpathian = {
+		GroupCriteria = { { 9458202 } }, 
+		Permissions = {
+			CanSpawnVehicle = { "McDoogleCrusader", "McDoogleCart" }
+		},
+		Name = "Carpathian"
+	}, 
+
+	VoltStaff = {
+		GroupCriteria = { { 9458223, 96 } 
+		},
+		Name = "VoltStaff"
+	}, 
+	VoltSupervisor = {
+		GroupCriteria = { { 9458223, 160 } 
+		},
+		Name = "VoltSupervisor"
+	}, 
+	CivilDefense = {
+		GroupCriteria = { { 9458236 }
+		},
+		Name = "CivilDefense"
+	}, 
+	ICFGroup = {
+		Income = 85, 
+		GroupCriteria = { { 10980802, 75, true }, { 10980802, 82, true } 
+		},
+		Name = "ICFGroup"
+	}, 
+
+	--ASPSGroup = {
+	--	GroupCriteria = { { 9970249 } }, 
+	--	Permissions = {
+	--		CanUseChannel = { "ASPS" }, 
+	--		CanSpawnVehicle = { "ASPSCrusaderC" },
+	--		CanGetItems = { "Mag556", "DelinoR21ASPS", "RadioASPS", "Flashlight" }
+	--	},
+	--	Name = "ASPSGroup"
+	--}, 
+
+	--ASPSUntrained = {
+	--	GroupCriteria = { { 9970249, 2 } },
+	--	Permissions = {
+	--		CanUseChannel = { "ASPS" }, 
+	--		CanSpawnVehicle = { "ASPSCrusaderC" },
+	--		CanGetItems = { "RadioASPS", "Flashlight" }
+	--	},
+	--	Name = "ASPSTrained"
+	--}, 
+	--ASPSMid = {
+	--	GroupCriteria = { { 9970249, 4 } }, 
+	--	Permissions = {
+	--		CanSpawnVehicle = { "ASPSCrusaderCS" },
+	--	},
+	--	Name = "ASPSMid"
+	--}, 
+	--AFIGroup = {
+	--	GroupCriteria = { { 6362085 } }, 
+	--	Permissions = {
+	--		CanSpawnVehicle = { "AFIElDorado4x4" },
+	--		CanUseChannel = { "AFI" }, 
+	--		CanGetItems = { "AFIRadio" }, 
+	--	},
+	--	Name = "AFIGroup"
+	--}, 
+	Tourist = {
+		Income = 55, 
+		Permissions = {
+			CanChangeTeam = { 1 }
+		},
+		Name = "Tourist"
+	}, 
+	Citizen = {
+		Income = 60, 
+		GroupCriteria = { { 10980802, 2 } }, 
+		Permissions = {
+			CanChangeTeam = { 2 }, 
+			CanTransfer = true
+		},
+		Name = "Citizen"
+	}
+};
+return v3;
+
+database.stores
+-- Script GUID: {F92CA9C6-FE37-4992-80FD-0F7805BE9B6A}
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {
+	Freedom = {
+		Name = "Freedom Firearms", 
+		Accepts = 3, 
+		Items = { 
+			{ "DelinoSpec", 40, true },
+			{ "DelinoDef", 30, true },
+			{ "Delino1711", 130, true }, 
+			{ "Mag45", 5, true },
+			{ "Mag44", 4, true },
+			{ "BaseballBat", 13, false },
+			{ "Switchblade", 10, false } }
+	}, 
+	Gills = {
+		Name = "Gill's Guns", 
+		Accepts = 3, 
+		Items = { 
+			{ "DelinoSpec", 40, true },
+			{ "DelinoDef", 30, true },
+			{ "Hawth500C", 67, true },
+			{ "DelinoR21", 80, true },
+			{ "Delino1711", 120, true },
+			{ "Mag45", 5, true },
+			{ "Mag12G", 5, true },
+			{ "Mag44", 3, true }, 
+			{ "Mag556", 5, true },
+			{ "BaseballBat", 12, false },
+			{ "Switchblade", 8, false } }
+	}, 
+	Parks = {
+		Name = "Parks & Wildlife", 
+		Accepts = 3, 
+		Items = {
+			{ "DelinoSpec", 40, true },
+			{ "DelinoDef", 30, true },
+			{ "Hawth500C", 77, true }, 
+			{ "DelinoR21", 90, true }, 
+			{ "Delino1711", 110, true },
+			{ "Mag45", 5, true },
+			{ "Mag12G", 5, true },
+			{ "Mag44", 3, true },
+			{ "Mag556", 5, true },
+			{ "BaseballBat", 12, false },
+			{ "Switchblade", 8, false } }
+	}, 
+	Cube = {
+		Name = "Cube Mart Sporting Goods", 
+		Accepts = 3, 
+		Items = { 
+			{ "Hawth500C", 70, true },
+			{ "DelinoR21", 85, true },
+			{ "Mag12G", 15, true },
+			{ "Mag44", 35, true },
+			{ "Mag556", 5, true }, 
+			{ "BaseballBat", 14, false },
+			{ "Switchblade", 9, false } }
+	}, 
+	LanderSewers = {
+		Name = "LPD Retirement Fund", 
+		Accepts = 3, 
+		Items = { 
+			{ "DelinoSpec", 54, false },
+			{ "DelinoDef", 47, false },
+			{ "Delino1711", 150, false },
+			{ "Mag45", 5, false },
+			{ "Hawth500C", 90, false }, 
+			{ "DelinoR21", 125, false }, 
+			{ "Benn17C", 175, false },
+			{ "DelinoR21AC", 185, false }, 
+			{ "Mag12G", 9, false },
+			{ "Mag44", 7, false },
+			{ "Mag55610", 9, false },
+			{ "MagB17", 15, false },
+			{ "Mag556", 13, false },
+			{ "Flashlight", 2, false } }
+	}, 
+	PlymouthSewers = {
+		Name = "PPD Retirement Fund", 
+		Accepts = 3, 
+		Items = { 
+			{ "DelinoSpec", 54, false },
+			{ "DelinoDef", 47, false },
+			{ "Delino1711", 150, false },
+			{ "Mag45", 5, false },
+			{ "Hawth500C", 90, false }, 
+			{ "DelinoR21", 125, false }, 
+			{ "Benn17C", 175, false },
+			{ "DelinoR21AC", 185, false }, 
+			{ "Mag12G", 9, false },
+			{ "Mag44", 7, false },
+			{ "Mag55610", 9, false },
+			{ "MagB17", 15, false },
+			{ "Mag556", 13, false },
+			{ "Flashlight", 2, false } }
+	}, 
+	GasStation = {
+		Name = "Gas Station", 
+		Accepts = 3, 
+		Items = { 
+			{ "Jerrycan", 5, false }, 
+			{ "Flashlight", 3, false },
+			{"ProtestSign", 6, false} }
+	}
+};
+return v1;
+
+database.teams
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = { {
+	
+	Name = "Tourist", 
+	TeamColor = BrickColor.new("Olive"), 
+	Default = true, 
+	Priority = 2
+}, {
+	
+	Name = "Citizen", 
+	TeamColor = BrickColor.new("Bright blue"), 
+	Priority = 1
+}, {
+	--1
+	Name = "Sheriff's Office", 
+	TeamColor = BrickColor.new("Brown"), 
+	DefaultChannel = "Global", 
+	Uniform = { "SheriffTeam", "Class A", "No Vest" }
+}, {
+	--2
+	Name = "Fire Department", 
+	TeamColor = BrickColor.new("Bright red"), 
+	DefaultChannel = "Global", 
+	Uniform = { "FireDepTeam", "Station Dress" }
+}, {
+	--3
+	Name = "Incarcerated", 
+	TeamColor = BrickColor.new("Bright orange"), 
+	Uniform = { "Inmate", "Inmate Clothes" }, 
+	Jail = true
+}, {
+	--4
+	Name = "State Government", 
+	TeamColor = BrickColor.new("Slime green")
+}, {
+	--5
+	Name = "LETI", 
+	TeamColor = BrickColor.new("Storm blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "LETI", "LETI Uniform" }
+}, {
+	--6
+	Name = "County Government", 
+	TeamColor = BrickColor.new("Mint")
+}, {
+	--7
+	Name = "Courts", 
+	TeamColor = BrickColor.new("Plum"), 
+	RoleSpawns = { { "JudiciaryJustice", "SupremeJudiciary" } }
+}, {
+	--8
+	Name = "U.S. Verdelac", 
+	TeamColor = BrickColor.new("Steel blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "PPDTeam", "Class A", "No Vest" }
+}, {
+	--9
+	Name = "Discarded State Police", 
+	TeamColor = BrickColor.new("Navy blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "MSPTeam", "Class A", "No Vest" }
+}, {
+	--10
+	Name = "Department of Justice", 
+	TeamColor = BrickColor.new("Persimmon")
+}, {
+	--11
+	Name = "Lander Police Department", 
+	TeamColor = BrickColor.new("Earth blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "LPDTeam", "Class A", "No Vest" }
+}, {
+
+	--12
+	Name = "Discarded Parks & Wildlife", 
+	TeamColor = BrickColor.new("Shamrock"), 
+	DefaultChannel = "Global", 
+	Uniform = { "PWTeam", "Class A" }
+}, {
+	--13
+	Name = "Team 1", 
+	TeamColor = BrickColor.new("Crimson"), 
+	DefaultChannel = "Global", 
+		Uniform = { "MNGTeam", "BDU", "Patrol Cap" }
+}, {
+	--14
+	Name = "Discarded Transit Authority", 
+	TeamColor = BrickColor.new("Royal purple"), 
+	DefaultChannel = "Global", 
+	Uniform = { "NHTATeam", "Bus Operator" }
+}, {
+	--15
+	Name = "Public Broadcasting Service", 
+	TeamColor = BrickColor.new("CGA brown")
+	
+}, {
+	--18
+	Name = "West Point Police Department", 
+	TeamColor = BrickColor.new("Gold"), 
+	DefaultChannel = "Global", 
+	Uniform = { "WPPDTeam", "Class A", "No Vest" }
+		
+}, {		
+		--20
+	Name = "Team 2", 
+	TeamColor = BrickColor.new("Forest green"), 
+	DefaultChannel = "Global", 
+		Uniform = { "MNGTeam", "BDU", "Patrol Cap" }
+		
+}, {
+		--21
+	Name = "Team 3", 
+	TeamColor = BrickColor.new("Deep blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "MNGTeam" , "BDU", "Patrol Cap" }
+		
+}, {
+		--19
+	Name = "Team 4", 
+	TeamColor = BrickColor.new("Sand blue"), 
+	DefaultChannel = "Global", 
+	Uniform = { "MNGTeam", "BDU", "Patrol Cap" }
+}, }
+
+
+if game.PlaceId == 5561650167 then
+	print("[Teams] Configuring LETI Instructor teams");
+	table.insert(v1, {
+		Name = "LETI Instructors", 
+		TeamColor = BrickColor.new("Medium blue"), 
+		DefaultChannel = "Global", 
+		Uniform = { "LETI", "LETI Uniform" }
+	});
+end;
+for v2, v3 in pairs(v1) do
+	if v3.RoleSpawns then
+		local v4 = {};
+		for v5, v6 in ipairs(v3.RoleSpawns) do
+			v4[v6[2]] = true;
+		end;
+		v3.VIPSpawns = v4;
+	end;
+end;
+return v1;
+
+database.tools
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {};
+local v2 = {
+	["Right Arm"] = { 0.5, 0.7 }, 
+	["Left Arm"] = { 0.5, 0.7 }, 
+	Torso = { 1, 1 }, 
+	Head = { 1, 1.2 }, 
+	["Right Leg"] = { 0.4, 0.6 }, 
+	["Left Leg"] = { 0.4, 0.6 }
+};
+v1.Baton = {
+	Type = "Melee", 
+	Asset = "Baton", 
+	BaseDamage = 9, 
+	Multipliers = v2,
+	Range = 10, 
+};
+v1.BaseballBat = {
+	Type = "Melee", 
+	Asset = "BaseballBat", 
+	BaseDamage = 10, 
+	Range = 10, 
+	Multipliers = v2
+};
+v1.ProtestSign = {
+	Type = "Melee", 
+	Asset = "ProtestSign", 
+	BaseDamage = 5, 
+	Range = 9, 
+	Multipliers = v2,
+	NoSmash = true
+};
+v1.Switchblade = {
+	Type = "Melee", 
+	Asset = "Switchblade", 
+	BaseDamage = 16, 
+	Range = 10, 
+	Multipliers = v2, 
+	NoSmash = true
+};
+v1.Snub = {
+	Asset = "Snub", 
+	BaseDamage = 30, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2, 2.5 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.25, 
+	MagSize = 6, 
+	Rounds = "9m", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 4.9
+};
+v1.Para17 = {
+	Asset = "Para17", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.15, 
+	Magazine = true, 
+	Rounds = "9mm", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 2.8,
+	Abilities = {
+		Flashlight = {
+			Type = "toggle", 
+			Label = "Flashlight", 
+			Function = function(p1, p2)
+				local l__Flashlight__3 = p1.Flashlight;
+				local v4 = l__Flashlight__3.Material ~= Enum.Material.Neon;
+				l__Flashlight__3.Material = v4 and Enum.Material.Neon or Enum.Material.SmoothPlastic;
+				l__Flashlight__3.SpotLight.Enabled = v4;
+			end, 
+			Key = Enum.KeyCode.B, 
+			Debounce = 0.2
+		}
+	}
+};
+v1.StetsonM1 = {
+	Asset = "StetsonM1", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread =  0.15, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = false, 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 2.5
+};
+v1.StetsonM2M = {
+	Asset = "StetsonM2M", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.4, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = true, 
+	Range = 1000, 
+	FoV = 25, 
+	Type = "Firearm", 
+	Recoil = 2.3,
+	Abilities = {
+		Flashlight = {
+			Type = "toggle", 
+			Label = "Flashlight", 
+			Function = function(p1, p2)
+				local l__Flashlight__3 = p1.Flashlight;
+				local v4 = l__Flashlight__3.Material ~= Enum.Material.Neon;
+				l__Flashlight__3.Material = v4 and Enum.Material.Neon or Enum.Material.SmoothPlastic;
+				l__Flashlight__3.SpotLight.Enabled = v4;
+			end, 
+			Key = Enum.KeyCode.B, 
+			Debounce = 0.2
+		}
+	}
+
+};
+v1.Hawth500 = {
+	Asset = "Hawth500", 
+	BaseDamage = 100, 
+	Multipliers = {
+		["Right Arm"] = { 0.5, 0.6 }, 
+		["Left Arm"] = { 0.5, 0.6 }, 
+		Torso = { 1.4, 1.6 }, 
+		Head = { 2, 2.8 }, 
+		["Right Leg"] = { 0.7, 0.8 }, 
+		["Left Leg"] = { 0.7, 0.8 }
+	}, 
+	Spread = 3, 
+	MagSize = 8, 
+	Rounds = "12g", 
+	Range = 984, 
+	FoV = 55, 
+	Type = "Firearm", 
+	Multishot = true, 
+	Recoil = 7
+};
+v1.StetsonM2A = {
+	Asset = "StetsonM2A", 
+	--Multishot = true, 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.4, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = true, 
+	Range = 1000, 
+	FoV = 45, 
+	Type = "Firearm", 
+	Recoil = 2.3,
+	Abilities = {
+		Flashlight = {
+			Type = "toggle", 
+			Label = "Flashlight", 
+			Function = function(p1, p2)
+				local l__Flashlight__3 = p1.Flashlight;
+				local v4 = l__Flashlight__3.Material ~= Enum.Material.Neon;
+				l__Flashlight__3.Material = v4 and Enum.Material.Neon or Enum.Material.SmoothPlastic;
+				l__Flashlight__3.SpotLight.Enabled = v4;
+			end, 
+			Key = Enum.KeyCode.B, 
+			Debounce = 0.2
+		}
+	}
+
+};
+v1.Hawth500C = v1.Hawth500;
+v1.Hawth500ASPS = v1.Hawth500;
+v1.DelinoDef = {
+	Asset = "DelinoDef", 
+	BaseDamage = 28, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2, 2.5 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.25, 
+	MagSize = 6, 
+	Rounds = ".44", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 6
+};
+v1.DelinoSpec = {
+	Asset = "DelinoSpec", 
+	BaseDamage = 34, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.4, 3 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.6, 
+	MagSize = 6, 
+	Rounds = ".44", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 7
+};
+v1.Benn17 = {
+	Asset = "Benn17", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.15, 
+	Magazine = true, 
+	Rounds = "9mm", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 3
+};
+v1.Delino1711 = {
+	Asset = "Delino1711", 
+	BaseDamage = 29, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.15, 
+	Magazine = true, 
+	Rounds = ".45", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 3
+};
+v1.SigP226 = {
+	Asset = "SigP226", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.15, 
+	Magazine = true, 
+	Rounds = "9mm", 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 3
+};
+v1.Benn17C = v1.Benn17;
+v1.DelinoR21 = {
+	Asset = "DelinoR21", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.2, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = false, 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 2.5
+};
+v1.DelinoR21A = {
+	Asset = "DelinoR21A", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.2, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = true, 
+	Range = 1000, 
+	FoV = 60, 
+	Type = "Firearm", 
+	Recoil = 2.5
+};
+v1.DelinoR21AC = v1.DelinoR21A;
+v1.DelinoR21ASPS = v1.DelinoR21;
+v1.DelinoR21M = {
+	Asset = "DelinoR21M", 
+	BaseDamage = 32, 
+	Multipliers = {
+		["Right Arm"] = { 0.4, 0.6 }, 
+		["Left Arm"] = { 0.4, 0.6 }, 
+		Torso = { 1, 1 }, 
+		Head = { 2.6, 3.4 }, 
+		["Right Leg"] = { 0.6, 0.8 }, 
+		["Left Leg"] = { 0.6, 0.8 }
+	}, 
+	Spread = 0.2, 
+	Magazine = true, 
+	Rounds = "556", 
+	Auto = true, 
+	Range = 1000, 
+	FoV = 25, 
+	Type = "Firearm", 
+	Recoil = 2.5, 
+	Abilities = {
+		Flashlight = {
+			Type = "toggle", 
+			Label = "Flashlight", 
+			Function = function(p1, p2)
+				local l__Flashlight__3 = p1.Flashlight;
+				local v4 = l__Flashlight__3.Material ~= Enum.Material.Neon;
+				l__Flashlight__3.Material = v4 and Enum.Material.Neon or Enum.Material.SmoothPlastic;
+				l__Flashlight__3.SpotLight.Enabled = v4;
+			end, 
+			Key = Enum.KeyCode.B, 
+			Debounce = 0.2
+		}
+	}
+};
+v1.TI26 = {
+	Asset = "TI26", 
+	Spread = 0.25, 
+	Rounds = "cart", 
+	MagSize = 1, 
+	Range = 35, 
+	FoV = 60, 
+	Type = "Taser", 
+	NoSmash = true,
+	Recoil = 2,
+	Abilities = {
+		Flashlight = {
+			Type = "toggle", 
+			Label = "Flashlight", 
+			Function = function(p1, p2)
+				local l__Flashlight__3 = p1.Flashlight;
+				local v4 = l__Flashlight__3.Material ~= Enum.Material.Neon;
+				l__Flashlight__3.Material = v4 and Enum.Material.Neon or Enum.Material.SmoothPlastic;
+				l__Flashlight__3.SpotLight.Enabled = v4;
+			end, 
+			Key = Enum.KeyCode.B, 
+			Debounce = 0.2
+		}
+	}
+};
+return v1;
+database.uniforms
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+local function v1(p1)
+	return {
+		["Infantry Beret"] = { "NGInfantryBeret" }, 
+		["MP Beret"] = { "NGMPBeret" }, 
+		["Logistics Beret"] = { "NGLogisticsBeret" }, 
+		["18X Beret"] = { "NG18XBeret" }, 
+		Cover = { p1 }
+	};
+end;
+local function v2(p2, p3)
+	local v3 = {};
+	for v4 = 1, #p2 do
+		v3[v4] = p2[v4];
+	end;
+	v3[#v3 + 1] = p3;
+	return {
+		["No Vest"] = p2, 
+		Vest = v3
+	};
+end;
+return {
+	SheriffTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, {
+			["No Vest"] = { "BaseDutyBelt" }, 
+			Vest = { "BaseDutyBelt", "SheriffVest" }, 
+			["WEB Vest"] = { "WarrantBureauVest", "BaseDutyBelt" }
+		}, true } }, 
+		["Class A"] = {
+			[28] = { 2049805231, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[56] = { 2049804792, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[72] = { 3607355978, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[84] = { 2049804629, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[112] = { 2049804995, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[140] = { 2049667577, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[168] = { 2049666661, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }, 
+			[182] = { 3607356896, 1530299383, nil, v2({ "SheriffGold", "BaseDutyBelt" }, "SheriffVest") }, 
+			[196] = { 2049668059, 1530299383, nil, v2({ "SheriffGold", "BaseDutyBelt" }, "SheriffVest") }, 
+			[224] = { 2049667913, 1530299383, nil, v2({ "SheriffGold", "BaseDutyBelt" }, "SheriffVest") },
+			[255] = { 2049667913, 1530299383, nil, v2({ "SheriffGold", "BaseDutyBelt" }, "SheriffVest") },
+			{ 2049805231, 1530299383, nil, v2({ "SheriffSilver", "BaseDutyBelt" }, "SheriffVest") }
+		}, 
+		Jacket = {
+			{ 5743169683, 1530299383, nil, ({ "SheriffSilver", "BaseDutyBelt" }) }
+		}, 
+		WEB = { { 3057955409, 3057955997, nil, { "SheriffCap", "WarrantBureauVest", "BaseDutyBelt" }, true } }, 
+		Polo = {
+			[7] = { 4862675361, 1127238288, nil, { "SheriffCap", "BaseDutyBelt" }, true }, 
+			[14] = { 2692536387, 1127238288, nil, { "SheriffCap", "BaseDutyBelt" }, true },
+			[255] = { 2692536387, 1127238288, nil, { "SheriffCap", "BaseDutyBelt" }, true },
+			{ 4862675361, 1127238288, nil, { "SheriffCap", "BaseDutyBelt" }, true }
+		}, 
+		Formals = {
+			[28] = { 6475259688, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } },  --deputy
+			[56] = { 6475263069, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } }, -- deputy first class
+			[72] = { 6475268232, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } },  -- deputy second grade
+			[84] = { 6475271341, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } },  --corporal
+			[112] = { 6475273369, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } }, --Sergeant 
+			[140] = { 6475275454, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } }, --Lieutenant 
+			[168] = { 6475278087, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } }, --Captain 
+			[182] = { 6475285336, 6475291656, nil, { "SheriffGold", "BaseDutyBelt" } }, --assistant sheriff
+			[196] = { 6475288111, 6475291656, nil, { "SheriffGold", "BaseDutyBelt" } }, --Undersheriff 
+			[224] = { 6475290534, 6475291656, nil, { "SheriffGold", "BaseDutyBelt" } },--Sheriff 
+			[255] = { 6475290534, 6475291656, nil, { "SheriffGold", "BaseDutyBelt" } },
+			{ 6475259688, 6475291656, nil, { "SheriffSilver", "BaseDutyBelt" } }
+		}
+	}, 
+	PPDTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, {
+			["No Vest"] = { "BaseDutyBelt" }, 
+			Vest = { "BaseDutyBelt", "PoliceVest" }, 
+			["Plate Vest"] = { "PlymouthPlateVest", "BaseDutyBelt" }
+		}, true } }, 
+		["Class A"] = {
+			[10] = { 104740077201159, 18364926631, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }, 
+			[20] = { 104740077201159, 18364926631, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }, 
+			[25] = { 104740077201159, 18364926631, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }, 
+			[30] = { 104740077201159, 18364926631, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }, 
+			[35] = { 104740077201159, 18364926631, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }, 
+			[40] = { 104740077201159, 18364926631, nil, v2({ "PPDSgt", "BaseDutyBelt" }, "PoliceVest") }, 
+			[60] = { 104740077201159, 18364926631, nil, v2({ "PPDCapt", "BaseDutyBelt" }, "PoliceVest") }, 
+			[80] = { 104740077201159, 18364926631, nil, v2({ "PPDCapt", "BaseDutyBelt" }, "PoliceVest") }, 
+			[90] = { 104740077201159, 18364926631, nil, v2({ "PPDCapt", "BaseDutyBelt" }, "PoliceVest") }, 
+			[100] = { 104740077201159, 18364926631, nil, v2({ "PPDCapt", "BaseDutyBelt" }, "PoliceVest") },
+			[255] = { 104740077201159, 18364926631, nil, v2({ "PPDCapt", "BaseDutyBelt" }, "PoliceVest") },
+			{ 18364926631, 104740077201159, nil, v2({ "PPDOfficer", "BaseDutyBelt" }, "PoliceVest") }
+		}, 
+		Traffic = {
+			[10] = { 1097802145, 1097609190, nil, { "PPDOfficer", "BaseDutyBelt" } }, 
+			[20] = { 1097802145, 1097609190, nil, { "PPDOfficer", "BaseDutyBelt" } }, 
+			[30] = { 1097802145, 1097609190, nil, { "PPDOfficer", "BaseDutyBelt" } }, 
+			[35] = { 1097802145, 1097609190, nil, { "PPDOfficer", "BaseDutyBelt" } }, 
+			[40] = { 1097802145, 1097609190, nil, { "PPDSgt", "BaseDutyBelt" } }, 
+			[60] = { 1097802145, 1097609190, nil, { "PPDCapt", "BaseDutyBelt" } }, 
+			[80] = { 1097802145, 1097609190, nil, { "PPDCapt", "BaseDutyBelt" } }, 
+			[90] = { 1097802145, 1097609190, nil, { "PPDCapt", "BaseDutyBelt" } }, 
+			[100] = { 1097802145, 1097609190, nil, { "PPDCapt", "BaseDutyBelt" } },
+			[255] = { 1097802145, 1097609190, nil, { "PPDCapt", "BaseDutyBelt" } },
+			{ 1097802145, 1097609190, nil, { "PPDOfficer", "BaseDutyBelt" } }
+		}, 
+		Polo = {
+			[10] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt" }, true }, 
+			[20] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt" }, true }, 
+			[30] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[35] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[40] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[60] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[80] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[90] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true }, 
+			[100] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true },
+			[255] = { 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt", "Sunglasses" }, true },
+			{ 1108327126, 1108328023, nil, { "PoliceCap", "BaseDutyBelt" }, true }
+		}, 
+		Formals = {
+			[10] = { 2692257763, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }, 
+			[20] = { 2692257763, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }, 
+			[25] = { 4683454525, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }, 
+			[30] = { 4860030531, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }, 
+			[35] = { 2692259171, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }, 
+			[40] = { 2692260128, 1550293744, nil, { "PPDSgt","BaseDutyBelt" } }, 
+			[60] = { 1942086965, 1550305758, nil, { "PPDCapt" ,"BaseDutyBelt"} }, 
+			[80] = { 1942085215, 1550305758, nil, { "PPDCapt" ,"BaseDutyBelt"} }, 
+			[90] = { 1942083472, 1550305758, nil, { "PPDCapt" ,"BaseDutyBelt"} }, 
+			[100] = { 1942080788, 1550305758, nil, { "PPDCapt","BaseDutyBelt" } },
+			[255] = { 1942080788, 1550305758, nil, { "PPDCapt","BaseDutyBelt" } },
+			{ 2692257763, 1550293744, nil, { "PPDOfficer","BaseDutyBelt" } }
+		}
+	}, 
+	WPPDTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, {
+			["No Vest"] = { "BaseDutyBelt" }, 
+			Vest = { "BaseDutyBelt", "WPPDVest" }, 
+			["Plate Vest"] = { "WPPDPlateVest", "BaseDutyBelt" }
+		}, true } }, 
+		["Class A"] = {
+			{ 6704739254, 1496301596, nil, v2({ "WPPDGrunt", "BaseDutyBelt" }, "WPPDVest") }
+		}, 
+	}, 
+	MSPTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, {
+			["No Vest"] = { "MSPBaseDutyBelt" }, 
+			Vest = { "MSPBaseDutyBelt", "TrooperVest" }, 
+			["SOB Vest"] = { "SOBVest", "MSPBaseDutyBelt" }
+		}, true } }, 
+		["Class A"] = {
+			[16] = { 1157342294, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[32] = { 2102054528, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[48] = { 3379711835, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[56] = { 1307141296, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[64] = { 1307141641, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[96] = { 1157559858, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[128] = { 1157560446, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[160] = { 1157560731, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[192] = { 1141998591, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }, 
+			[224] = { 1141998591, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") },
+			[255] = { 1141998591, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") },
+			{ 1157342294, 1157348775, nil, v2({ "StateHat", "MSPBaseDutyBelt" }, "TrooperVest") }
+		}, 
+		["Training Polo"] = { { 1157561073, 1157348775, nil, { "StateHat", "MSPBaseDutyBelt" } } }, 
+		SOB = { { 5523141151, 2692312887, nil, { "SOBVest", "BlackHelmet", "Balaclava", "MSPBaseDutyBelt" }, true } },
+		["Protection Suit"] = {
+			{ 2629096324, 2629098507, nil, {"MSPBaseDutyBelt" }, true }, 
+		},
+
+
+		["SOB UBAC"] = { { 5629026918, 2692312887, nil, { "SOBVest", "MSPBaseDutyBelt" }, true } }
+
+	}, 
+	LPDTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, {
+			["No Vest"] = { "BaseDutyBelt" }, 
+			Vest = { "BaseDutyBelt", "PoliceVest" }, 
+			["Plate Vest"] = { "LanderPlateVest", "BaseDutyBelt" }
+		}, true } }, 
+		["Class A"] = {
+			[55] = { 2260384279, 2260391768, nil, v2({ "BaseDutyBelt", "LPDGrunt" }, "PoliceVest") }, 
+			[80] = { 2260384862, 2260391768, nil, v2({ "BaseDutyBelt", "LPDGrunt" }, "PoliceVest") }, 
+			[105] = { 2397080512, 2260391768, nil, v2({ "BaseDutyBelt", "LPDGrunt" }, "PoliceVest") }, 
+			[130] = { 2260385147, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") }, 
+			[155] = { 2260385375, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") }, 
+			[180] = { 2260385988, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") }, 
+			[205] = { 2260386253, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") }, 
+			[230] = { 2260386478, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") },
+			[255] = { 2260386478, 2260391768, nil, v2({ "BaseDutyBelt", "LPDHigh" }, "PoliceVest") },
+			{ 2260384279, 2260391768, nil, v2({ "BaseDutyBelt", "LPDGrunt" }, "PoliceVest") }
+		}, 
+		Formals = {
+			[55] = { 2253167321, 2253330317, nil, { "BaseDutyBelt", "LPDGrunt" } }, 
+			[80] = { 2397081256, 2253330317, nil, { "BaseDutyBelt", "LPDGrunt" } }, 
+			[105] = { 2397080862, 2253330317, nil, { "BaseDutyBelt", "LPDGrunt" } }, 
+			[130] = { 2253167492, 2253330317, nil, { "BaseDutyBelt", "LPDHigh" } }, 
+			[155] = { 2253166960, 2253330156, nil, { "BaseDutyBelt", "LPDHigh" } }, 
+			[180] = { 2253166614, 2253330156, nil, { "BaseDutyBelt", "LPDHigh" } }, 
+			[205] = { 2253166389, 2253330156, nil, { "BaseDutyBelt", "LPDHigh" } }, 
+			[230] = { 2253166816, 2253330156, nil, { "BaseDutyBelt", "LPDHigh" } },
+			[255] = { 2253166816, 2253330156, nil, { "BaseDutyBelt", "LPDHigh" } },
+			{ 2253167321, 2253330317, nil, { "BaseDutyBelt", "LPDGrunt" } }
+		}, 
+		["Training Polo"] = { { 5062872600, 2260850200, nil, { "BaseDutyBelt", "PoliceCap" }, true } },
+		["TRU"] = {
+			{ 5696379013, 5629243137, nil, {"BaseDutyBelt", "LanderPlateVest" }, true }, 
+
+		},
+	}, 
+	FireDepTeam = {
+		["Station Dress"] = {
+			[26] = { 986991764, 986993781, nil, { "NormBellCap" } }, 
+			[52] = { 986991764, 986993781, nil, { "NormBellCap" } }, 
+			[78] = { 986991764, 986993781, nil, { "NormBellCap" } }, 
+			[104] = { 986992123, 986993781, nil, { "LieutCaptBellCap" } }, 
+			[130] = { 986992491, 986993781, nil, { "LieutCaptBellCap" } }, 
+			[156] = { 986992738, 986993781, nil, { "AsstDeptBellCap" } }, 
+			[182] = { 986993204, 986993781, nil, { "AsstDeptBellCap" } }, 
+			[208] = { 986740984, 986993781, nil, { "ChiefBellCap" } },
+			[255] = { 986740984, 986993781, nil, { "ChiefBellCap" } },
+			{ 986991764, 986993781, nil, { "NormBellCap" } }
+		}, 
+		Turnouts = {
+			[26] = { 1010226529, 1010230075, nil, { "FireCadetHelmet" }, true }, 
+			[52] = { 1010227068, 1010230075, nil, { "FireFighterHelmet" }, true }, 
+			[78] = { 1010227523, 1010230075, nil, { "FireMedicHelmet" }, true }, 
+			[104] = { 1010227523, 1010230075, nil, { "FireMedicHelmet" }, true }, 
+			[130] = { 1010228161, 1010230075, nil, { "FireLieutenantHelmet" }, true }, 
+			[156] = { 1010228454, 1010230075, nil, { "FireCaptainHelmet" }, true }, 
+			[182] = { 1010228774, 1010230075, nil, { "FireDeptChiefHelmet" }, true }, 
+			[208] = { 1010229331, 1010230075, nil, { "FireChiefHelmet" }, true },
+			[255] = { 1010229331, 1010230075, nil, { "FireChiefHelmet" }, true },
+			{ 1010226529, 1010230075, nil, { "FireCadetHelmet" }, true }
+		}
+	},
+	Inmate = {
+		["Inmate Clothes"] = { { 1136906381, 1141056528, nil, nil, true } }
+	}, 
+	LETI = {
+		["LETI Uniform"] = {
+			[28] = { 1127222231, 1127223205, nil, {} }, 
+			[140] = { 1127222231, 1127223205, nil, {} }, 
+			[168] = { 1127222733, 1127223205, nil, {} }, 
+			[196] = { 1127222733, 1127223205, nil, {} }, 
+			[224] = { 1127222733, 1127223205, nil, {} }, 
+			[240] = { 1127222733, 1127223205, nil, {} }, 
+			[254] = { 1127222733, 1127223205, nil, {} },
+			[255] = { 1127222733, 1127223205, nil, {} },
+			{ 1127222231, 1127223205, nil, {} }
+		}
+	}, 
+	MNGTeam = {
+		["Class A"] = {
+			[25] = { 4866471900, 4866602242, nil, v1("NGPvt") }, 
+			[30] = { 4866553250, 4866602242, nil, v1("NGPvt") }, 
+			[45] = { 4866555079, 4866602242, nil, v1("NGPvt") }, 
+			[60] = { 4866556419, 4866602242, nil, v1("NGPvt") }, 
+			[75] = { 4866557983, 4866602242, nil, v1("NGPvt") }, 
+			[90] = { 4866567793, 4866602242, nil, v1("NGPvt") }, 
+			[105] = { 4866574625, 4866602242, nil, v1("NGPvt") }, 
+			[120] = { 4866577286, 4866602242, nil, v1("NG2Lt") }, 
+			[135] = { 4866579580, 4866602242, nil, v1("NG2Lt") }, 
+			[150] = { 4866581528, 4866602242, nil, v1("NG2Lt") }, 
+			[165] = { 4866582990, 4866602242, nil, v1("NG2Lt") }, 
+			[180] = { 4866586403, 4866602242, nil, v1("NGLtCol") }, 
+			[195] = { 4866591026, 4866602242, nil, v1("NGLtCol") }, 
+			[210] = { 4866594719, 4866602242, nil, v1("NGLtCol") }, 
+			[225] = { 4866599681, 4866602242, nil, v1("NGLtCol") },
+			[255] = { 4866599681, 4866602242, nil, v1("NGLtCol") },
+			{ 4866470276, 4866602242, nil, v1("NGPvt") }
+		}, 
+		BDU = { { 4882101848, 5022447876, nil, {
+			["Patrol Cap"] = { "NGCap" }, 
+			["Logistics Beret"] = { "NGLogisticsBeret" }, 
+			["Infantry Beret"] = { "NGInfantryBeret" }
+		} } }, 
+		["18X"] = { { 4882102673, 4882102383, nil, {
+			["Boonie Smock"] = { "NGBoonie" }, 
+			["Boonie Combats"] = { "NGBoonie", "NGWebbingVest" }, 
+			["Beret Smock"] = { "NG18XBeret" }, 
+			["Beret Combats"] = { "NG18XBeret", "NGWebbingVest" }
+		} } }, 
+		Combats = { { 4882102133, 4882100977, nil, { "NGHelmet", "NGWebbingVest" } } }
+	}, 
+	MNGMP = {
+		["Plain Clothes"] = { { nil, nil, nil, { "BaseDutyBelt" }, true } }, 
+		["MP BDU"] = { { 4882101252, 5022447876, nil, {
+			["Patrol Cap"] = { "NGCap", "BaseDutyBelt" }, 
+			["MP Beret"] = { "NGMPBeret", "BaseDutyBelt" }
+		} } }, 
+		["MP Combats"] = { { 4883367817, 5022447876, nil, { "NGHelmet", "NGWebbingVest" } } }
+	}, 
+	PWTeam = {
+		["Plain Clothes"] = { { nil, nil, nil, { "PAWDutyBelt" }, true } }, 
+		["Class A"] = {
+			[43] = { 2695526577, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[86] = { 2695527102, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[129] = { 2695526234, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[172] = { 2695527436, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[182] = { 3607355234, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[192] = { 2695525562, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[212] = { 2695525877, 2695528610, nil, { "PWHat", "PAWDutyBelt" } },
+			[255] = { 2695525877, 2695528610, nil, { "PWHat", "PAWDutyBelt" } },
+			{ 2702050346, 2695528610, nil, { "PWHat", "PAWDutyBelt" } }
+		}, 
+		["Class B"] = {
+			[43] = { 2695526746, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[86] = { 2695527303, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[129] = { 2695526375, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[172] = { 2695527615, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[182] = { 3607355550, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[192] = { 2695525733, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }, 
+			[212] = { 2695526027, 2714544744, nil, { "PWHat", "PAWDutyBelt" } },
+			[255] = { 2695526027, 2714544744, nil, { "PWHat", "PAWDutyBelt" } },
+			{ 2695526746, 2714544744, nil, { "PWHat", "PAWDutyBelt" } }
+		}, 
+		Formals = { { 2695525321, 2695528306, nil, { "PWHat","PAWDutyBelt" } } }, 
+		Reflective = { { 2871486663, 2714544744, nil, { "PWHat", "PAWDutyBelt" } } }
+	}, 
+	NHTATeam = {
+		["Overalls"] = {
+			{ 2691769444, 2691767640, nil, {"Blank" }, true }, 
+		},
+		["Bus Operator"] = { { 2691153258, 2691152061, nil, { "BusCap" } } }
+	}, 
+	Carpathian = {
+		["Security Uniform"] = {
+			[20] = { 3433849578, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }, 
+			[40] = { 3626892314, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }, 
+			[50] = { 3627569171, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }, 
+			[60] = { 3629805822, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }, 
+			[70] = { 3433849578, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }, 
+			[254] = { 3629825799, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") },
+			[255] = { 3629825799, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") },
+			{ 3433849578, 3433850365, nil, v2({ "McDoogleBelt", "McDoogleHat" }, "McDoogleVest") }
+		}, 
+		["Security Polo"] = { { 4210127322, 3433850365, nil, { "McDoogleBelt", "Sunglasses" } } }, 
+		["Plain Clothes"] = { { nil, nil, nil, v2({ "McDoogleBelt" }, "McDoogleVest"), true } }
+	}, 
+	ASPSGroup = {
+		["Security‎‎"] = {
+			{ 6533428663, 6533429419, nil, v2({ "ASPSBelt" }, "ASPSVest"), true }
+		}, 
+		["Plain Clothes"] = { { nil, nil, nil, v2({ "ASPSBelt" }, "ASPSVest"), true } }
+	}, 
+	ASPSUntrained = {
+		["ASPS Polo"] = { { 6535699127, 6529661101, nil, { "ASPSBelt" }, true } },
+	}, 
+	CivilDefense = {
+		Service = { { 3725878967, 3671907048, nil, { "CDHelmet" } } }, 
+		["Emergency Management"] = { { 3725876499, 3671907048, nil, { "CDHelmet" } } }
+	}, 
+	AFIGroup = {
+		Formal = { { 6356094107, 6356094445, nil, {
+			["Formal Cap"] = { "AFICap2", "AFICombatWebbing2" }, 
+			["No Hat"] = {"AFICombatWebbing2" }, 
+		} } },
+		["MP BDU"] = { { 6380716255, 6317172295, nil, {
+			["Helmet"] = { "AFIHelmet", "AFICombatWebbing" }, 
+			["Field Cap"] = {"AFICap", "AFICombatWebbing" }, 
+			["No Hat"] = {"AFICombatWebbing" }, 
+		} } },
+		--	Formal = { { 6356094107, 6356094445, nil, { "AFICap2" , "AFICombatWebbing2"} } },
+		BDU = { { 6317171833, 6317172295, nil, {
+			["Helmet"] = { "AFIHelmet", "AFICombatWebbing" }, 
+			["Field Cap"] = { "AFICap", "AFICombatWebbing" }, 
+			["No Hat"] = { "AFICombatWebbing" } },		
+		} } },
+
+	VoltStaff = {
+		Events = { { 5048416663, 3433850365, nil, nil, nil, true } }, 
+		Staff = { { 104740077201159, 14909501372, nil, nil, nil, true } }
+	}
+};
+
+database.uniforms.accesoryblacklist
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	["4794183296"] = true, 
+	["4793971886"] = true, 
+	["4753195371"] = true, 
+	["4735272012"] = true, 
+	["4753153215"] = true, 
+	["4240253936"] = true, 
+	["4794173239"] = true, 
+	["4793958453"] = true, 
+	["4794344877"] = true, 
+	["4793985219"] = true, 
+	["4771555241"] = true, 
+	["4753371200"] = true, 
+	["4771536301"] = true, 
+	["4753230230"] = true, 
+	["4820468093"] = true, 
+	["4820468847"] = true, 
+	["4822353689"] = true, 
+	["4837259850"] = true, 
+	["4753194062"] = true, 
+	["4735676088"] = true, 
+	["4753437569"] = true, 
+	["4820446498"] = true, 
+	["4876763035"] = true, 
+	["4771647994"] = true, 
+	["4771646140"] = true, 
+	["4771552459"] = true, 
+	["4771592966"] = true, 
+	["4820448812"] = true, 
+	["4332375148"] = true, 
+	["4435389917"] = true, 
+	["4585144193"] = true, 
+	["4506965901"] = true, 
+	["4821679391"] = true, 
+	["4821776975"] = true, 
+	["4684079842"] = true, 
+	["4753609886"] = true, 
+	["4753609549"] = true, 
+	["4753607871"] = true, 
+	["4753610119"] = true, 
+	["4735116238"] = true, 
+	["4735123833"] = true, 
+	["4735128068"] = true, 
+	["4735119986"] = true, 
+	["4735121738"] = true, 
+	["4753608134"] = true, 
+	["4753590705"] = true, 
+	["4753606822"] = true, 
+	["4753601040"] = true, 
+	["4753593217"] = true, 
+	["4753586470"] = true, 
+	["4962552589"] = true, 
+	["5028584774"] = true, 
+	["5028575290"] = true, 
+	["5861465755"] = true, 
+	["5833489124"] = true, 
+	["5028580729"] = true, 
+	["4962394040"] = true, 
+	["5802095741"] = true, 
+	["4963888772"] = true, 
+	["5029101168"] = true, 
+	["5029099961"] = true, 
+	["5029051489"] = true, 
+	["4820447344"] = true, 
+	["5063549346"] = true
+};
+
+
+uniforms.hairstyles
+local HairStyles = {
+	[1] = {Name = "None"},
+	[2] = {Name = "Trecky", Accessory = "Trecky"},
+	[3] = {Name = "Bun", Accessory = "Bun"},
+	[4] = {Name = "Long", Accessory = "Long"}
+}
+return HairStyles
+
+uniforms.mainmodule
+
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	["4794183296"] = true, 
+	["4793971886"] = true, 
+	["4753195371"] = true, 
+	["4735272012"] = true, 
+	["4753153215"] = true, 
+	["4240253936"] = true, 
+	["4794173239"] = true, 
+	["4793958453"] = true, 
+	["4794344877"] = true, 
+	["4793985219"] = true, 
+	["4771555241"] = true, 
+	["4753371200"] = true, 
+	["4771536301"] = true, 
+	["4753230230"] = true, 
+	["4820468093"] = true, 
+	["4820468847"] = true, 
+	["4822353689"] = true, 
+	["4837259850"] = true, 
+	["4753194062"] = true, 
+	["4735676088"] = true, 
+	["4753437569"] = true, 
+	["4820446498"] = true, 
+	["4876763035"] = true, 
+	["4771647994"] = true, 
+	["4771646140"] = true, 
+	["4771552459"] = true, 
+	["4771592966"] = true, 
+	["4820448812"] = true, 
+	["4332375148"] = true, 
+	["4435389917"] = true, 
+	["4585144193"] = true, 
+	["4506965901"] = true, 
+	["4821679391"] = true, 
+	["4821776975"] = true, 
+	["4684079842"] = true, 
+	["4753609886"] = true, 
+	["4753609549"] = true, 
+	["4753607871"] = true, 
+	["4753610119"] = true, 
+	["4735116238"] = true, 
+	["4735123833"] = true, 
+	["4735128068"] = true, 
+	["4735119986"] = true, 
+	["4735121738"] = true, 
+	["4753608134"] = true, 
+	["4753590705"] = true, 
+	["4753606822"] = true, 
+	["4753601040"] = true, 
+	["4753593217"] = true, 
+	["4753586470"] = true, 
+	["4962552589"] = true, 
+	["5028584774"] = true, 
+	["5028575290"] = true, 
+	["5861465755"] = true, 
+	["5833489124"] = true, 
+	["5028580729"] = true, 
+	["4962394040"] = true, 
+	["5802095741"] = true, 
+	["4963888772"] = true, 
+	["5029101168"] = true, 
+	["5029099961"] = true, 
+	["5029051489"] = true, 
+	["4820447344"] = true, 
+	["5063549346"] = true
+};
+
+
+database.vehiclespawns
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {};
+local v2 = { "Conveyor", "Chariot", "ChariotIntrepid", "ChariotExplorer", "ChariotUtility", "ElDorado", "StretchCrusader", "Jackal", "TaxiJackal", "ElDorado4x4", "TrailDestroyer", "Hankmobile", "DevConveyor", "Crusader", "CabCrusader", "CrusaderC", "CabCrusaderC", "Carpathian", "McDoogleCrusader", "McDoogleCart", "GolfCart" , "RacerCrusader"};
+local v3 = {"RCSOCrusaderV2","RCSOCrusaderV1","TPOCrusader","CHPCrusader","BRITCrusader","TACOTRUCK", "PWIntrepidLEO","PWJackalLEO","LPDCrusaderS","SheriffUtility","NGUtility","MSPChariot","UnmarkedTaxiJackal","PPDConveyor","UnmarkedJackalS","PPDCrusaderCS","PPDCrusaderS","SheriffCrusaderS","SheriffConveyor", "PPDElDorado", "SheriffChariot", "PPDElDoradoSup", "SheriffChariotSup", "PPDJackal", "MSPJackal", "LPDJackal", "NGElDorado4x4", "DevConveyor", "SheriffJackal", "PWIntrepid", "UnmarkedJackal", "Hankmobile", "NGCrusader", "NGCrusaderMP", "MSPCrusader", "MSPCrusaderS", "LPDCrusader", "PPDCrusader", "SheriffCrusader", "SheriffCrusaderCS", "UnmarkedCrusader", "UnmarkedCrusaderC", "PPDCrusaderC", "SheriffCrusaderC", "LPDCrusaderCS", "LPDCrusaderC", "LPDCrusaderC", "MSPCrusaderC", "MSPCrusaderCS", "SheriffCrusaderC", "PWJackal", "NGCrusaderC", "NGCrusaderCMP", "MSPUtility", "LPDUtility", "RacerCrusader" };
+v1._Default = {
+	Vehicles = v2
+};
+v1.LanderDealership = {
+	Vehicles = v2
+};
+v1.ASPSSpawn = {
+	Role = "ASPSGroup", 
+	Vehicles = v2
+};
+v1.PlymouthDealership = {
+	Vehicles = v2
+};
+v1.WestPointDealership = {
+	Vehicles = v2
+};
+v1.LanderDealership = {
+	Vehicles = v2
+};
+v1.AFISSpawn = {
+	Vehicles = v2
+};
+v1.SOCiviSpawn = {
+	Vehicles = v2
+};
+v1.NationalGuardCivi = {
+	Vehicles = v2
+};
+v1.PrisonSpawn = {
+	Role = "SheriffGroup", 
+	Vehicles = v3
+};
+v1.SOSpawn = {
+	Role = "SheriffGroup", 
+	Vehicles = v3
+};
+v1.LPDSpawn = {
+	Role = "LPDGroup", 
+	Vehicles = v3
+};
+v1.WPSOSubStation = {
+	Role = "SheriffGroup", 
+	Vehicles = v3
+};
+v1.MSPHQSpawn = {
+	Role = "MSPGroup", 
+	Vehicles = v3
+};
+v1.PPDSpawn = {
+	Role = "PPDGroup", 
+	Vehicles = v3
+};
+v1.MSPSpawn = {
+	Role = "MSPGroup", 
+	Vehicles = v3
+};
+v1.NationalGuard = {
+	Role = "MNGGroup", 
+	Vehicles = v3
+};
+v1.NationalGuard1 = {
+	Role = "MNGGroup", 
+	Vehicles = v3
+};
+v1.NationalGuard2 = {
+	Role = "MNGGroup", 
+	Vehicles = v3
+};
+v1.NationalGuard3 = {
+	Role = "MNGGroup", 
+	Vehicles = v3
+};
+v1.ParksWild = {
+	Role = "PWGroup", 
+	Vehicles = v3
+};
+v1.FireDepartment = {
+	Role = "FireDepGroup", 
+	Vehicles = { "NHTALandCrawlerTD","NHTALandCrawlerDD","FireBoxAmbulance", "FireAmbulance", "FireElDorado", "FireTruck", "UnmarkedCrusader" }
+};
+v1.NHCTASpawn = {
+	Role = "NHTAGroup", 
+	Vehicles = { "NHTALandCrawlerDD","NHTALandCrawler", "NHTAUtility", 'NHTALandCrawlerTD' }
+};
+v1.PBSSpawn = {
+	Role = "PBSGroup", 
+	Vehicles = { "PBSConveyor" }
+};
+if game.PlaceId == 993383085 then
+	print("[VehicleSpawns] Configuring LETI VehicleSpawns");
+	local v4 = { "PBSConveyor", "NHTALandCrawler", "NHTAUtility", "FireBoxAmbulance", "FireAmbulance", "FireElDorado", "FireTruck" };
+	for v5, v6 in pairs(v3) do
+		table.insert(v4, v6);
+	end;
+	for v7, v8 in pairs(v2) do
+		table.insert(v4, v8);
+	end;
+	v1.InstituteSpawn = {
+		Vehicles = v4
+	};
+end;
+return v1;
+
+database.vehicles
+-- Decompiled with the Synapse X Luau decompiler.
+
+local v1 = {};
+local function v2(p1, p2)
+	local v3 = nil;
+	local v4 = nil;
+	if type(p1) == "table" then
+		v4 = {};
+		for v5, v6 in pairs(p1) do
+			v4[v5] = v6;
+		end;
+		if not p2 then
+			v3 = v4;
+			return v3;
+		end;
+	else
+		v4 = p1;
+		v3 = v4;
+		return v3;
+	end;
+	for v7, v8 in pairs(p2) do
+		if v7:sub(1, 1) == "_" then
+			v4[v7:sub(2)] = nil;
+		else
+			v4[v7] = v8;
+		end;
+	end;
+	return v4;
+end;
+local v9 = {
+	MaxTorque = math.huge, 
+	AngularSpeed = 2.5, 
+	TargetAngle = 40
+};
+local v10 = { { "WE", "RE", "RE2" }, { { { { "RE2" }, {}, 0.4 }, { {}, { "RE2" }, 0.4 } }, { { { "WE" }, { "RE" }, 0.3 }, { { "RE" }, { "WE" }, 0.3 } } } };
+local v11 = { { "BE", "RE", "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "BE", "LED1:!BE", "LED2:!BE", "LED3:!BE" }, { "RE", "LED4", "LED5", "LED6" }, 0.3 }, { { "RE", "LED4:!RE", "LED5:!RE", "LED6:!RE" }, { "BE", "LED1", "LED2", "LED3" }, 0.3 } } } };
+local trolling = { { "WE", "RE", "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "WE", "LED1:!WE", "LED2:!WE", "LED3:!WE" }, { "RE", "LED4", "LED5", "LED6" }, 0.3 }, { { "RE", "LED4:!RE", "LED5:!RE", "LED6:!RE" }, { "WE", "LED1", "LED2", "LED3" }, 0.3 } } } };
+local v88 = { { "WE", "RE", "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "BE", "LED1:!WE", "LED2:!WE", "LED3:!WE" }, { "RE", "LED4", "LED5", "LED6" }, 0.3 }, { { "RE", "LED4:!RE", "LED5:!RE", "LED6:!RE" }, { "WE", "LED1", "LED2", "LED3" }, 0.3 } } } };
+local v25 = { { "GOE", "TOE" }, { { { { "GOE" }, { "TOE" }, 0.3 }, { { "TOE" }, { "GOE" }, 0.3 } } } };
+local v12 = { { "BE", "RE", "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "BE", "LED2:!BE", "LED4:!BE", "LED6:!BE" }, { "RE", "LED1", "LED3", "LED5" }, 0.3 }, { { "RE", "LED1:!RE", "LED3:!RE", "LED5:!RE" }, { "BE", "LED2", "LED4", "LED6" }, 0.3 } } } };
+local v13 = { {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "LED6:!OE" }, {}, 0.25 }, { { "LED6:!OE", "LED5:!OE" }, {}, 0.25 }, { { "LED6:!OE", "LED5:!OE", "LED4:!OE" }, {}, 0.25 }, { { "LED6:!OE", "LED5:!OE", "LED4:!OE", "LED3:!OE" }, {}, 0.25 }, { { "LED6:!OE", "LED5:!OE", "LED4:!OE", "LED3:!OE", "LED2:!OE" }, {}, 0.25 }, { { "LED6:!OE", "LED5:!OE", "LED4:!OE", "LED3:!OE", "LED2:!OE", "LED1:!OE" }, {}, 0.25 }, { {}, { "LED6", "LED5", "LED4", "LED3", "LED2", "LED1" }, 0.25 } } }
+}, {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "LED1:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE", "LED4:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE", "LED4:!OE", "LED5:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE", "LED4:!OE", "LED5:!OE", "LED6:!OE" }, {}, 0.25 }, { {}, { "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, 0.25 } } }
+}, {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5", "LED6" }, { { { { "LED3:!OE", "LED4:!OE" }, {}, 0.3 }, { { "LED3:!OE", "LED4:!OE", "LED2:!OE", "LED5:!OE" }, {}, 0.3 }, { { "LED3:!OE", "LED4:!OE", "LED2:!OE", "LED5:!OE", "LED1:!OE", "LED6:!OE" }, {}, 0.3 }, { {}, { "LED3", "LED4", "LED2", "LED5", "LED1", "LED6" }, 0.3 } } }
+} };
+local v14 = { {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "LED5:!OE" }, {}, 0.25 }, { { "LED5:!OE", "LED4:!OE" }, {}, 0.25 }, { { "LED5:!OE", "LED4:!OE", "LED3:!OE" }, {}, 0.25 }, { { "LED5:!OE", "LED4:!OE", "LED3:!OE", "LED2:!OE" }, {}, 0.25 }, { { "LED5:!OE", "LED4:!OE", "LED3:!OE", "LED2:!OE", "LED1:!OE" }, {}, 0.25 }, { {}, { "LED5", "LED4", "LED3", "LED2", "LED1" }, 0.25 } } }
+}, {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "LED1:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE", "LED4:!OE" }, {}, 0.25 }, { { "LED1:!OE", "LED2:!OE", "LED3:!OE", "LED4:!OE", "LED5:!OE" }, {}, 0.25 }, { {}, { "LED1", "LED2", "LED3", "LED4", "LED5" }, 0.25 } } }
+}, {
+	Priority = 2,
+	{ "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "LED3:!OE" }, {}, 0.3 }, { { "LED3:!OE", "LED2:!OE", "LED4:!OE" }, {}, 0.3 }, { { "LED3:!OE", "LED2:!OE", "LED4:!OE", "LED5:!OE", "LED1:!OE" }, {}, 0.3 }, { {}, { "LED3", "LED4", "LED2", "LED5", "LED1" }, 0.3 } } }
+} };
+local v15 = { { v11 }, v13 };
+local swag = { { trolling }, v13 };
+local v16 = { { v12 }, v13 };
+local v17 = { { v11 }, v14 };
+local v18 = { { v12 }, v14 };
+local v19 = { { "WE", "RE", "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "WE", "LED2:!RE", "LED4:!RE" }, { "RE", "LED1", "LED3", "LED5" }, 0.3 }, { { "RE", "LED1:!WE", "LED3:!WE", "LED5:!WE" }, { "WE", "LED2", "LED4" }, 0.3 } } } };
+local v99 = { { v88 }, v13 };
+local v20 = { { "WE", "OE" }, { { { { "WE" }, { "OE" }, 0.3 }, { { "OE" }, { "WE" }, 0.3 } } } };
+local v21 = { { "WE", "RE", "OE", "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "RE", "LED1:!RE", "LED5:!RE" }, { "WE", "LED2", "LED3", "LED4", "OE" }, 0.2 }, { { "WE", "OE", "LED3:!OE", "LED2:!WE", "LED4:!WE" }, { "RE", "LED1", "LED5" }, 0.2 }, { { "OE", "LED3:!OE" }, { "WE", "RE", "LED2", "LED4" }, 0.2 } } } };
+local v22 = {
+	Lower = 0.6, 
+	Upper = 1.8, 
+	Damping = 9500, 
+	FreeLength = 1.2, 
+	MaxForce = 400000, 
+	Stiffness = 90000
+};
+local v23 = {
+	Lower = 0.5, 
+	Upper = 1.8, 
+	Damping = 10000, 
+	FreeLength = 1.2, 
+	MaxForce = 400000, 
+	Stiffness = 85000
+};
+v1.LPDJackal = {
+	Name = "LPD Jackalope", 
+	Asset = "LPDJackal", 
+	MaxHealth = 1100, 
+	GasTank = 800, 
+	InventorySize = 110, 
+	Sirens = true, 
+	Inventory = { { "PoliceBarrier", 2 }, { "Cone", 6 }, { "RadarGun", 1 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 8.5, 
+	Torque = 130000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 110 }, 
+	Drive = "AWD", 
+	Weight = 510, 
+	Suspension = v23, 
+	BrakeAcceIeration = 16, 
+	Steering = v9, 
+	LightPatterns = { { v19 }, v14 }, 
+	Directors = true
+};
+v1.TACOTRUCK = {
+	Name = "TACOTRUCK", 
+	Asset = "TACOTRUCK", 
+	MaxHealth = 1600, 
+	GasTank = 1500, 
+	InventorySize = 160, 
+	AcceIeration = 8.5, 
+	Torque = 145000, 
+	Gears = { -15, 0, 20, 40, 60, 70, 120 }, 
+	Drive = "RWD", 
+	Weight = 620, 
+	Suspension = {
+		Lower = 0.8, 
+		Upper = 1.7, 
+		Damping = 14000, 
+		FreeLength = 1.3, 
+		MaxForce = 400000, 
+		Stiffness = 130000
+	}, 
+	BrakeAcceIeration = 12, 
+	Sirens = true, 
+	Steering = v9
+};
+v1.PPDJackal = v2(v1.LPDJackal, {
+	Name = "PPD Jackalope", 
+	Asset = "PPDJackal", 
+	LightPatterns = v16
+});
+v1.MSPJackal = v2(v1.PPDJackal, {
+	Name = "DSP Jackalope", 
+	Asset = "MSPJackal"
+});
+v1.SheriffJackal = v2(v1.PPDJackal, {
+	Name = "Sheriff Jackalope", 
+	Asset = "SheriffJackal"
+});
+v1.UnmarkedJackal = v2(v1.PPDJackal, {
+	Name = "Unmarked Jackalope", 
+	Asset = "UnmarkedJackal", 
+	Color = BrickColor.new("Black"), 
+	Paintable = true, 
+	LightPatterns = v15
+});
+v1.UnmarkedTaxiJackal = v2(v1.PPDJackal, {
+	Name = "Unmarked Taxi Jackalope", 
+	Asset = "UnmarkedTaxiJackal", 
+	Color = BrickColor.new("Gold"), 
+	Paintable = false,
+	LightPatterns = v15
+});
+v1.UnmarkedJackalS = v2(v1.PPDJackal, {
+	Name = "Unmarked Jackalope S", 
+	Asset = "UnmarkedJackalS", 
+	Color = BrickColor.new("Black"), 
+	Paintable = true, 
+	LightPatterns = v15
+});
+v1.PWJackal = v2(v1.PPDJackal, {
+	Name = "Wildlife Jackalope", 
+	Asset = "PWJackal", 
+	Inventory = { { "PWBarrier", 4 }, { "Cone", 8 }, { "Jerrycan", 4 } }, 
+	LightPatterns = { { v19 }, v14 }
+});
+v1.PWJackalLEO = v2(v1.PPDJackal, {
+	Name = "Ranger Jackalope", 
+	Asset = "PWJackalLEO", 
+	Inventory = { { "PWBarrier", 4 }, { "Cone", 8 }, { "Jerrycan", 4 } }, 
+	LightPatterns = v18
+});
+v1.NHTALandCrawler = {
+	Name = "Land Crawler", 
+	Asset = "NHTALandCrawler", 
+	MaxHealth = 900, 
+	GasTank = 2300, 
+	InventorySize = 0, 
+	AcceIeration = 5, 
+	Torque = 140000, 
+	Gears = { -15, 0, 20, 30, 50, 70, 80 }, 
+	Drive = "AWD", 
+	Weight = 900, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.4, 
+		Damping = 15000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 150000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.NHTALandCrawlerDD = {
+	Name = "Land Crawler DD", 
+	Asset = "NHTALandCrawlerDD", 
+	MaxHealth = 900, 
+	GasTank = 2300, 
+	InventorySize = 0, 
+	AcceIeration = 5.5, 
+	Torque = 140000, 
+	Gears = { -15, 0, 20, 30, 50, 70, 80 }, 
+	Drive = "AWD", 
+	Weight = 900, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.4, 
+		Damping = 15000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 150000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.NHTALandCrawlerTD = {
+	Name = "Land Crawler TD", 
+	Asset = "NHTALandCrawlerTD", 
+	MaxHealth = 900, 
+	GasTank = 2300, 
+	InventorySize = 0, 
+	AcceIeration = 5.5, 
+	Torque = 140000, 
+	Gears = { -15, 0, 20, 30, 50, 70, 80 }, 
+	Drive = "AWD", 
+	Weight = 900, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.4, 
+		Damping = 15000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 150000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.Jackal = {
+	Name = "Jackalope", 
+	Asset = "Jackal", 
+	MaxHealth = 1000, 
+	GasTank = 800, 
+	InventorySize = 100, 
+	Paintable = true, 
+	AcceIeration = 8, 
+	Torque = 120000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 100 }, 
+	Drive = "AWD", 
+	Weight = 500, 
+	Suspension = v23, 
+	BrakeAcceIeration = 15, 
+	Steering = v9
+};
+v1.TaxiJackal = v2(v1.Jackal, {
+	Name = "Jackalope Taxi", 
+	Asset = "TaxiJackal", 
+	_Paintable = true
+});
+v1.SheriffChariot = {
+	Name = "Sheriff Chariot", 
+	Asset = "SheriffChariot", 
+	MaxHealth = 925, 
+	GasTank = 750, 
+	InventorySize = 160, 
+	Sirens = true, 
+	Inventory = { { "PoliceBarrier", 3 }, { "Cone", 5 }, { "Jerrycan", 1 }, { "RadarGun", 1 } }, 
+	AcceIeration = 8.25, 
+	Torque = 150000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 110 }, 
+	Drive = "RWD", 
+	Weight = 550, 
+	Suspension = v22, 
+	BrakeAcceIeration = 18, 
+	Steering = v9, 
+	LightPatterns = { { v11 } }
+};
+v1.SheriffChariotSup = v2(v1.SheriffChariot, {
+	Name = "Sheriff Chariot S", 
+	Asset = "SheriffChariotSup"
+});
+v1.MSPChariot = v2(v1.SheriffChariot, {
+	Name = "DSP Chariot", 
+	Asset = "MSPChariot"
+});
+v1.PWIntrepid = v2(v1.SheriffChariot, {
+	Name = "Wildlife Intrepid", 
+	Asset = "PWIntrepid", 
+	Inventory = { { "Jerrycan", 4 } }, 
+	LightPatterns = { { v19 } }
+});
+v1.PWIntrepidLEO = v2(v1.SheriffChariot, {
+	Name = "Ranger Intrepid", 
+	Asset = "PWIntrepidLEO", 
+	Inventory = { { "Jerrycan", 4 } }, 
+});
+v1.Chariot = {
+	Name = "Chariot", 
+	Asset = "Chariot", 
+	MaxHealth = 750, 
+	GasTank = 1000, 
+	InventorySize = 160, 
+	Paintable = true, 
+	AcceIeration = 7.5, 
+	Torque = 145000, 
+	Gears = { -15, 0, 30, 50, 60, 70, 80 }, 
+	Drive = "RWD", 
+	Weight = 520, 
+	Suspension = v22, 
+	BrakeAcceIeration = 17, 
+	Steering = v9
+};
+v1.ChariotIntrepid = {
+	Name = "Chariot Intrepid", 
+	Asset = "ChariotIntrepid", 
+	MaxHealth = 750, 
+	GasTank = 1000, 
+	InventorySize = 160, 
+	Paintable = true, 
+	AcceIeration = 7.5, 
+	Torque = 145000, 
+	Gears = { -15, 0, 30, 50, 60, 70, 80 }, 
+	Drive = "RWD", 
+	Weight = 550, 
+	Suspension = v22, 
+	BrakeAcceIeration = 17, 
+	Steering = v9
+};
+v1.ChariotExplorer = {
+	Name = "Chariot Explorer", 
+	Asset = "ChariotExplorer", 
+	MaxHealth = 800, 
+	GasTank = 1000, 
+	InventorySize = 170, 
+	Paintable = true, 
+	AcceIeration = 7, 
+	Torque = 145000, 
+	Gears = { -15, 0, 30, 50, 60, 70, 80 }, 
+	Drive = "RWD", 
+	Weight = 550, 
+	Suspension = v22, 
+	BrakeAcceIeration = 16, 
+	Steering = v9
+};
+v1.ChariotUtility = {
+	Name = "Chariot Utility", 
+	Asset = "ChariotUtility", 
+	MaxHealth = 850, 
+	GasTank = 1000, 
+	InventorySize = 180, 
+	Paintable = true, 
+	AcceIeration = 6.5, 
+	Torque = 145000, 
+	Gears = { -15, 0, 20, 40, 50, 70, 80 }, 
+	Drive = "RWD", 
+	Weight = 580, 
+	Suspension = v22, 
+	BrakeAcceIeration = 14, 
+	Steering = v9
+};
+v1.NHTAUtility = v2(v1.ChariotUtility, {
+	Name = "NHTA Utility", 
+	Asset = "NHTAUtility", 
+	LightPatterns = { { v20 } }, 
+	Inventory = { { "Cone", 4 }, { "Jerrycan", 2 } }, 
+	Sirens = true
+});
+v1.MSPUtility = v2({
+	Name = "DSP Utility", 
+	Asset = "MSPUtility", 
+	MaxHealth = 1400, 
+	GasTank = 1100, 
+	InventorySize = 200, 
+	Paintable = true, 
+	Sirens = true, 
+	Inventory = { { "PoliceBarrier", 4 }, { "Cone", 12 }, { "Jerrycan", 2 } }, 
+	AcceIeration = 7, 
+	Torque = 145000, 
+	Gears = { -15, 0, 20, 40, 50, 70, 90 }, 
+	Drive = "RWD", 
+	Weight = 600, 
+	Suspension = v22, 
+	BrakeAcceIeration = 14, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = v18
+});
+v1.SheriffUtility = v2({
+	Name = "Sheriff Utility", 
+	Asset = "SheriffUtility", 
+	MaxHealth = 1400, 
+	GasTank = 1100, 
+	InventorySize = 200, 
+	Paintable = true, 
+	Sirens = true, 
+	Inventory = { { "PoliceBarrier", 4 }, { "Cone", 12 }, { "Jerrycan", 2 } }, 
+	AcceIeration = 7, 
+	Torque = 145000, 
+	Gears = { -15, 0, 20, 40, 50, 70, 90 }, 
+	Drive = "RWD", 
+	Weight = 600, 
+	Suspension = v22, 
+	BrakeAcceIeration = 14, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = v18
+});
+v1.LPDUtility = v2(v1.MSPUtility, {
+	Name = "LPD Utility", 
+	Asset = "LPDUtility", 
+	LightPatterns = { { v19 }, v14 }
+});
+v1.NGUtility = v2(v1.MSPUtility, {
+	Name = "NG Utility", 
+	Asset = "NGUtility", 
+	_LightPatterns = true,
+	Inventory = { { "NGBarrier", 4 }, { "Cone", 12 }, { "Jerrycan", 2 } }, 
+});
+v1.TrailDestroyer = {
+	Name = "Trail Destroyer", 
+	Asset = "TrailDestroyer", 
+	MaxHealth = 600, 
+	GasTank = 1500, 
+	InventorySize = 160, 
+	AcceIeration = 5.5, 
+	Torque = 145000, 
+	Gears = { -15, 0, 20, 40, 50, 60, 70 }, 
+	Drive = "RWD", 
+	Weight = 620, 
+	Suspension = {
+		Lower = 0.8, 
+		Upper = 1.7, 
+		Damping = 14000, 
+		FreeLength = 1.3, 
+		MaxForce = 400000, 
+		Stiffness = 130000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.Conveyor = {
+	Name = "Conveyor", 
+	Asset = "Conveyor", 
+	MaxHealth = 800, 
+	GasTank = 1150, 
+	InventorySize = 260, 
+	Paintable = true, 
+	AcceIeration = 5.5, 
+	Torque = 155000, 
+	Gears = { -15, 0, 20, 40, 50, 60, 70 }, 
+	Drive = "RWD", 
+	Weight = 680, 
+	Suspension = {
+		Lower = 0.3, 
+		Upper = 1.6, 
+		Damping = 10000, 
+		FreeLength = 0.7, 
+		MaxForce = 400000, 
+		Stiffness = 105000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.PBSConveyor = {
+	Name = "PBS Conveyor", 
+	Asset = "PBSConveyor", 
+	MaxHealth = 800, 
+	GasTank = 1200, 
+	InventorySize = 180, 
+	AcceIeration = 6, 
+	Torque = 159000, 
+	Gears = { -15, 0, 20, 30, 50, 70, 80 }, 
+	Drive = "RWD", 
+	Weight = 700, 
+	Suspension = v1.Conveyor.Suspension, 
+	BrakeAcceIeration = 12, 
+	Steering = v9
+};
+v1.SheriffConveyor = {
+	Name = "Sheriff Conveyor", 
+	Asset = "SheriffConveyor", 
+	MaxHealth = 900, 
+	GasTank = 1200, 
+	InventorySize = 240, 
+	Sirens = true, 
+	Inventory = { { "Jerrycan", 1 } }, 
+	AcceIeration = 6.5, 
+	Torque = 160000, 
+	Gears = { -15, 0, 20, 40, 50, 60, 80 }, 
+	Drive = "RWD", 
+	Weight = 700, 
+	Suspension = v1.Conveyor.Suspension, 
+	BrakeAcceIeration = 12, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = v18
+};
+v1.PPDConveyor = {
+	Name = "PPD Conveyor", 
+	Asset = "PPDConveyor", 
+	MaxHealth = 900, 
+	GasTank = 1200, 
+	InventorySize = 240, 
+	Sirens = true, 
+	Inventory = { { "Jerrycan", 1 } }, 
+	AcceIeration = 6.5, 
+	Torque = 160000, 
+	Gears = { -15, 0, 20, 40, 50, 60, 80 }, 
+	Drive = "RWD", 
+	Weight = 700, 
+	Suspension = v1.Conveyor.Suspension, 
+	BrakeAcceIeration = 12, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = v18
+};
+v1.DevConveyor = {
+	Name = "Dev Conveyor", 
+	Asset = "DevConveyor", 
+	MaxHealth = 900, 
+	GasTank = 1200, 
+	InventorySize = 240, 
+	Sirens = true, 
+	Inventory = { { "Cone", 8 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 7, 
+	Torque = v1.SheriffConveyor.Torque, 
+	Gears = v1.SheriffConveyor.Gears, 
+	Drive = "RWD", 
+	Weight = 700, 
+	Suspension = v1.Conveyor.Suspension, 
+	BrakeAcceIeration = 12, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = { { { { "WE", "OE", "LED1", "LED2", "LED3", "LED4", "LED5" }, { { { { "WE", "LED2:!WE", "LED4:!WE" }, { "OE", "LED1", "LED3", "LED5" }, 0.3 }, { { "OE", "LED1:!OE", "LED3:!OE", "LED5:!OE" }, { "WE", "LED2", "LED4" }, 0.3 } } } } }, v14 }
+};
+v1.ElDorado = {
+	Name = "ElDorado", 
+	Asset = "ElDorado", 
+	MaxHealth = 850, 
+	GasTank = 1000, 
+	InventorySize = 130, 
+	Paintable = true, 
+	AcceIeration = 7.25, 
+	Torque = 145000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 90 }, 
+	Drive = "AWD", 
+	Weight = 550, 
+	Suspension = {
+		Lower = 0.6, 
+		Upper = 1.8, 
+		Damping = 8000, 
+		FreeLength = 1.2, 
+		MaxForce = 400000, 
+		Stiffness = 80000
+	}, 
+	BrakeAcceIeration = 15, 
+	Steering = v9
+};
+v1.ElDorado4x4 = {
+	Name = "ElDorado 4x4", 
+	Asset = "ElDorado4x4", 
+	MaxHealth = 850, 
+	GasTank = 1000, 
+	InventorySize = 160, 
+	Paintable = true, 
+	AcceIeration = 7.25, 
+	Torque = 155000, 
+	Gears = v1.ElDorado.Gears, 
+	Drive = "AWD", 
+	Weight = 540, 
+	Suspension = v1.ElDorado.Suspension, 
+	BrakeAcceIeration = 15, 
+	Steering = v9
+};
+v1.PPDElDorado = {
+	Name = "PPD ElDorado", 
+	Asset = "PPDElDorado", 
+	MaxHealth = 950, 
+	GasTank = 1000, 
+	InventorySize = 130, 
+	Sirens = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 }, { "RadarGun", 1 } }, 
+	AcceIeration = 7.5, 
+	Torque = 160000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 95 }, 
+	Drive = "AWD", 
+	Weight = 550, 
+	Suspension = v1.ElDorado.Suspension, 
+	BrakeAcceIeration = 15, 
+	Steering = v9, 
+	LightPatterns = { { v11 } }
+};
+v1.PPDElDoradoSup = v2(v1.PPDElDorado, {
+	Name = "PPD ElDorado S", 
+	Asset = "PPDElDoradoSup"
+});
+v1.FireElDorado = v2(v1.PPDElDorado, {
+	Name = "Fire ElDorado", 
+	Asset = "FireElDorado", 
+	Directors = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 } }, 
+	LightPatterns = { { v21 }, v14 }
+});
+v1.Hankmobile = {
+	Name = "Hankmobile", 
+	Asset = "Hankmobile", 
+	MaxHealth = 2000, 
+	GasTank = 2500, 
+	InventorySize = 200, 
+	Paintable = true, 
+	Color = BrickColor.new("Black"), 
+	AcceIeration = 15, 
+	Torque = 200000, 
+	Gears = { -15, 0, 30, 50, 80, 120, 150 }, 
+	Drive = "AWD", 
+	Weight = 600, 
+	Suspension = {
+		Lower = 0.6, 
+		Upper = 1.4, 
+		Damping = 9000, 
+		FreeLength = 1, 
+		MaxForce = 400000, 
+		Stiffness = 90000
+	}, 
+	BrakeAcceIeration = 30, 
+	Steering = v9
+};
+v1.NGElDorado4x4 = {
+	Name = "NG ElDorado 4x4", 
+	Asset = "NGElDorado4x4", 
+	MaxHealth = 950, 
+	GasTank = 1000, 
+	InventorySize = 160, 
+	Inventory = { { "Cone", 8 }, { "NGBarrier", 2 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 7.5, 
+	Torque = 160000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 95 }, 
+	Drive = "AWD", 
+	Weight = 540, 
+	Suspension = v1.ElDorado.Suspension, 
+	BrakeAcceIeration = 15, 
+	Steering = v9
+};
+v1.AFIElDorado4x4 = {
+	Name = "AFI ElDorado 4x4", 
+	Asset = "AFIElDorado4x4", 
+	MaxHealth = 950, 
+	GasTank = 1000, 
+	InventorySize = 160, 
+	Inventory = {}, 
+	AcceIeration = 7.5, 
+	Torque = 160000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 95 }, 
+	Drive = "AWD", 
+	Weight = 540, 
+	Suspension = v1.ElDorado.Suspension, 
+	BrakeAcceIeration = 15, 
+	Steering = v9
+};
+v1.FireAmbulance = {
+	Name = "Fire Vanbulance", 
+	Asset = "FireAmbulance", 
+	MaxHealth = 1000, 
+	GasTank = 1300, 
+	InventorySize = 200, 
+	Sirens = true, 
+	Inventory = { { "FireBarrier", 3 }, { "Cone", 5 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 7, 
+	Torque = 180000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 90 }, 
+	Drive = "RWD", 
+	Weight = 650, 
+	Suspension = {
+		Lower = 0.2, 
+		Upper = 1.2, 
+		Damping = 10000, 
+		FreeLength = 0.7, 
+		MaxForce = 400000, 
+		Stiffness = 95000
+	}, 
+	BrakeAcceIeration = 12, 
+	Steering = v9, 
+	LightPatterns = { { v21 } }
+};
+v1.FireBoxAmbulance = {
+	Name = "Fire Ambulance", 
+	Asset = "FireBoxAmbulance", 
+	MaxHealth = 1100, 
+	GasTank = 1350, 
+	InventorySize = 220, 
+	Sirens = true, 
+	Inventory = { { "FireBarrier", 3 }, { "Cone", 5 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 6.5, 
+	Torque = 190000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 90 }, 
+	Drive = "RWD", 
+	Weight = 750, 
+	Suspension = {
+		Lower = 0.3, 
+		Upper = 1.3, 
+		Damping = 10000, 
+		FreeLength = 0.8, 
+		MaxForce = 400000, 
+		Stiffness = 115000
+	}, 
+	BrakeAcceIeration = 11, 
+	Steering = v9, 
+	LightPatterns = { { { { "WE", "WE2", "OE", "RE", "RE2" }, { { { { "RE", "WE", "OE" }, { "WE2", "RE2" }, 0.3 }, { { "WE2", "RE2" }, { "RE", "WE", "OE" }, 0.3 }, { { "RE", "WE" }, { "WE2", "RE2", "OE" }, 0.3 }, { { "WE2", "RE2", "OE" }, { "RE", "WE" }, 0.3 } } } } } }
+};
+v1.FireTruck = {
+	Name = "Fire Truck", 
+	Asset = "FireTruck", 
+	MaxHealth = 1000, 
+	GasTank = 2200, 
+	InventorySize = 300, 
+	Sirens = true, 
+	Inventory = { { "FireBarrier", 10 }, { "Cone", 5 }, { "Jerrycan", 1 } }, 
+	AcceIeration = 6.25, 
+	Torque = 240000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 90 }, 
+	Drive = "AWD", 
+	Weight = 1200, 
+	Suspension = {
+		Lower = 0.4, 
+		Upper = 2.2, 
+		Damping = 20000, 
+		FreeLength = 1.2, 
+		MaxForce = 400000, 
+		Stiffness = 200000
+	}, 
+	BrakeAcceIeration = 10, 
+	Steering = v9, 
+	LightPatterns = { { { { "RE", "RE2" }, { { { { "RE" }, { "RE2" }, 0.3 }, { { "RE2" }, { "RE" }, 0.3 } } } } } }
+};
+v1.StretchCrusader = {
+	Name = "Stretch Crusader", 
+	Asset = "StretchCrusader", 
+	MaxHealth = 1000, 
+	GasTank = 600, 
+	InventorySize = 90, 
+	Paintable = true, 
+	AcceIeration = 6.25, 
+	Torque = 110000, 
+	Gears = { -15, 0, 30, 50, 70, 80, 90 }, 
+	Drive = "RWD", 
+	Weight = 450, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.4, 
+		Damping = 7000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 70000
+	}, 
+	BrakeAcceIeration = 16, 
+	Steering = v9
+};
+v1.Crusader = {
+	Name = "Crusader", 
+	Asset = "Crusader", 
+	MaxHealth = 900, 
+	GasTank = 500, 
+	InventorySize = 70, 
+	Paintable = true, 
+	AcceIeration = 9.5, 
+	Torque = 95000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 110 }, 
+	Drive = "RWD", 
+	Weight = 400, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.3, 
+		Damping = 6000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 60000
+	}, 
+	BrakeAcceIeration = 18, 
+	Steering = v9
+};
+v1.CabCrusader = v2(v1.Crusader, {
+	Name = "Crusader Taxi", 
+	Asset = "CabCrusader", 
+	--	Color = BrickColor.new("Gold"),
+	Paintable = true, 
+});
+v1.SheriffCrusader = {
+	Name = "Sheriff Crusader", 
+	Asset = "SheriffCrusader", 
+	MaxHealth = 1000, 
+	GasTank = 500, 
+	InventorySize = 80, 
+	Sirens = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 }, { "RadarGun", 1 } }, 
+	AcceIeration = 10, 
+	Torque = 100000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 120 }, 
+	Drive = "RWD", 
+	Weight = 400, 
+	Suspension = v1.Crusader.Suspension, 
+	BrakeAcceIeration = 20, 
+	Steering = v9, 
+	Directors = true, 
+	LightPatterns = v15
+};
+v1.LPDCrusader = v2(v1.SheriffCrusader, {
+	Name = "LPD Crusader", 
+	Asset = "LPDCrusader", 
+	LightPatterns = { { { { "WE", "RE" }, { { { { "WE" }, { "RE" }, 0.3 }, { { "RE" }, { "WE" }, 0.3 } } } } }, v13 }
+});
+
+v1.SheriffCrusaderS = v2(v1.SheriffCrusader, {
+	Name = "Sheriff Crusader S", 
+	Asset = "SheriffCrusaderS", 
+	LightPatterns = v15
+});
+v1.BRITCrusader = v2(v1.SheriffCrusader, {
+	Name = "British Crusader", 
+	Asset = "BRITCrusader", 
+});
+v1.CHPCrusader = v2(v1.SheriffCrusader, {
+	Name = "CHP Crusader", 
+	Asset = "CHPCrusader", 
+});
+v1.RCSOCrusaderV1 = v2(v1.SheriffCrusader, {
+	Name = "RCSO Crusader v1", 
+	Asset = "RCSOCrusaderV1", 
+	Inventory = {}, 
+});
+v1.RCSOCrusaderV2 = v2(v1.SheriffCrusader, {
+	Name = "RCSO Crusader v2", 
+	Asset = "RCSOCrusaderV2", 
+	Inventory = {}, 
+});
+v1.TPOCrusader = v2(v1.SheriffCrusader, {
+	Name = "TPO Crusader", 
+	Asset = "TPOCrusader", 
+	Inventory = {}, 
+});
+v1.LPDCrusaderS = v2(v1.SheriffCrusader, {
+	Name = "LPD Crusader S", 
+	Asset = "LPDCrusaderS", 
+	LightPatterns = swag
+});
+v1.McDoogleCrusader = v2(v1.SheriffCrusader, {
+	Name = "McDoogle Crusader", 
+	Asset = "McDoogleCrusader", 
+	LightPatterns = { { { { "WE", "OE" }, { { { { "WE" }, { "OE" }, 0.3 }, { { "OE" }, { "WE" }, 0.3 } } } } }, v13 },
+	Inventory = {}, 
+	Directors = true
+});
+v1.ASPSCrusaderC = v2(v1.McDoogleCrusader, {
+	Name = "ASPS Crusader C", 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.5, 
+		Damping = 7000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 70000
+	},
+	AcceIeration = 8,
+	Inventory = {}, 
+	Directors = true,
+	Asset = "ASPSCrusaderC", 
+	LightPatterns = { { v25 }, v13 }, 
+});
+v1.PPDCrusader = v2(v1.SheriffCrusader, {
+	Name = "PPD Crusader", 
+	Asset = "PPDCrusader"
+});
+v1.PPDCrusaderS = v2(v1.SheriffCrusader, {
+	Name = "PPD Crusader S", 
+	Asset = "PPDCrusaderS"
+});
+v1.MSPCrusader = v2(v1.SheriffCrusader, {
+	Name = "DSP Crusader", 
+	Asset = "MSPCrusader"
+});
+v1.MSPCrusaderS = v2(v1.SheriffCrusader, {
+	Name = "DSP Crusader S", 
+	Asset = "MSPCrusaderS"
+});
+v1.UnmarkedCrusader = v2(v1.SheriffCrusader, {
+	Name = "Unmarked Crusader", 
+	Asset = "UnmarkedCrusader", 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 } }, 
+	Color = BrickColor.new("Black"), 
+	Paintable = true, 
+	LightPatterns = v16
+});
+v1.NGCrusader = v2(v1.SheriffCrusader, {
+	Name = "NG Crusader", 
+	Asset = "NGCrusader", 
+	_Sirens = true, 
+	_LightPatterns = true, 
+	_Directors = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 } }
+});
+v1.NGCrusaderMP = v2(v1.NGCrusader, {
+	Name = "NG Crusader MP", 
+	Asset = "NGCrusaderMP", 
+	Sirens = true, 
+	LightPatterns = { { v10 } }
+});
+v1.Carpathian = {
+	Name = "Carpathian", 
+	Asset = "Carpathian", 
+	MaxHealth = 500, 
+	GasTank = 300, 
+	InventorySize = 60, 
+	AcceIeration = 4.5, 
+	Torque = 90000, 
+	Gears = { -6, 0, 10, 30, 50 }, 
+	Drive = "RWD", 
+	Weight = 400, 
+	Suspension = {
+		Lower = 0.6, 
+		Upper = 1.2, 
+		Damping = 6000, 
+		FreeLength = 1, 
+		MaxForce = 400000, 
+		Stiffness = 60000
+	}, 
+	BrakeAcceIeration = 10, 
+	Steering = v9
+};
+v1.CrusaderC = {
+	Name = "Crusader Classic", 
+	Asset = "CrusaderC", 
+	MaxHealth = 825, 
+	GasTank = 500, 
+	InventorySize = 80, 
+	Paintable = true, 
+	AcceIeration = 8, 
+	Torque = 110000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 100 }, 
+	Drive = "RWD", 
+	Weight = 450, 
+	Suspension = {
+		Lower = 0.7, 
+		Upper = 1.5, 
+		Damping = 7000, 
+		FreeLength = 1.1, 
+		MaxForce = 400000, 
+		Stiffness = 70000
+	}, 
+	BrakeAcceIeration = 13, 
+	Steering = v9
+};
+v1.CabCrusaderC = v2(v1.CrusaderC, {
+	Name = "Crusader Taxi Classic", 
+	Asset = "CabCrusaderC",
+	Paintable = true, 
+	--Color = BrickColor.new("Gold")
+});
+v1.SheriffCrusaderC = {
+	Name = "Sheriff Crusader Classic", 
+	Asset = "SheriffCrusaderC", 
+	MaxHealth = 900, 
+	GasTank = 500, 
+	InventorySize = 90, 
+	Sirens = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 }, { "RadarGun", 1 } }, 
+	AcceIeration = 8.5, 
+	Torque = 115000, 
+	Gears = { -15, 0, 30, 50, 70, 90, 110 }, 
+	Drive = "RWD", 
+	Weight = 450, 
+	Suspension = v1.CrusaderC.Suspension, 
+	BrakeAcceIeration = 14, 
+	Steering = v9, 
+	LightPatterns = { { v11 } }
+};
+v1.SheriffCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "Sheriff Crusader Classic S", 
+	Asset = "SheriffCrusaderCS"
+});
+v1.LPDCrusaderC = v2(v1.SheriffCrusaderC, {
+	Name = "LPD Crusader Classic", 
+	Asset = "LPDCrusaderC", 
+	LightPatterns = { { v19 } }
+});
+v1.LPDCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "LPD Crusader Classic S", 
+	Asset = "LPDCrusaderCS", 
+	LightPatterns = { { v19 } }
+});
+v1.PPDCrusaderC = v2(v1.SheriffCrusaderC, {
+	Name = "PPD Crusader Classic", 
+	Asset = "PPDCrusaderC"
+});
+v1.PPDCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "PPD Crusader Classic S", 
+	Asset = "PPDCrusaderCS"
+});
+v1.MSPCrusaderC = v2(v1.SheriffCrusaderC, {
+	Name = "DSP Crusader Classic", 
+	Asset = "MSPCrusaderC"
+});
+v1.MSPCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "DSP Crusader Classic S", 
+	Asset = "MSPCrusaderCS"
+});
+v1.UnmarkedCrusaderC = v2(v1.SheriffCrusaderC, {
+	Name = "Unmarked Crusader Classic", 
+	Asset = "UnmarkedCrusaderC", 
+	Color = BrickColor.new("Black"), 
+	Paintable = true, 
+	LightPatterns = { { { { "RE" }, { { { { "RE" }, {}, 0.3 }, { {}, { "RE" }, 0.3 } } } } } }
+});
+v1.NGCrusaderC = v2(v1.SheriffCrusaderC, {
+	Name = "NG Crusader Classic", 
+	Asset = "NGCrusaderC", 
+	_Sirens = true, 
+	_LightPatterns = true, 
+	Inventory = { { "Cone", 5 }, { "Jerrycan", 1 } }
+});
+v1.ASPSCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "ASPS Crusader CS", 
+	Asset = "ASPSCrusaderCS", 
+	_Sirens = true, 
+	_LightPatterns = true, 
+	Inventory = {}
+});
+v1.NGCrusaderCMP = v2(v1.NGCrusaderC, {
+	Name = "NG Crusader Classic MP", 
+	Asset = "NGCrusaderCMP", 
+	Sirens = true, 
+	LightPatterns = { { v10 } }
+});
+v1.SheriffCrusaderCS = v2(v1.SheriffCrusaderC, {
+	Name = "Sheriff Crusader Classic S", 
+	Asset = "SheriffCrusaderCS"
+});
+v1.GolfCart = {
+	Name = "Little Tee", 
+	Asset = "GolfCart", 
+	MaxHealth = 400, 
+	GasTank = 300, 
+	InventorySize = 20, 
+	Paintable = true, 
+	Electric = true, 
+	AcceIeration = 10, 
+	Torque = 9000, 
+	Gears = { -15, 0, 20 }, 
+	Drive = "RWD", 
+	Weight = 100, 
+	Suspension = {
+		Lower = 0.5, 
+		Upper = 1.1, 
+		Damping = 3000, 
+		FreeLength = 0.8, 
+		MaxForce = 10000, 
+		Stiffness = 20000
+	}, 
+	BrakeAcceIeration = 11, 
+	Steering = v9
+};
+v1.McDoogleCart = v2(v1.GolfCart, {
+	Name = "McDoogle Tee", 
+	Asset = "McDoogleCart", 
+	_Paintable = true, 
+	LightPatterns = { { v20 } }, 
+	Sirens = true
+});
+v1.RacerCrusader = {
+	Name = "RacerCrusader", 
+	Asset = "RacerCrusader", 
+	MaxHealth = 2000, 
+	GasTank = 2500, 
+	InventorySize = 200, 
+	Paintable = true, 
+	Color = BrickColor.new("Black"), 
+	AcceIeration = 15, 
+	Torque = 200000, 
+	Gears = { -15, 0, 30, 50, 80, 120, 150 }, 
+	Drive = "AWD", 
+	Weight = 600, 
+	Suspension = {
+		Lower = 0.6, 
+		Upper = 1.4, 
+		Damping = 9000, 
+		FreeLength = 1, 
+		MaxForce = 400000, 
+		Stiffness = 90000
+	}, 
+	BrakeAcceIeration = 30, 
+	Steering = v9
+};
+return v1;
+
+vehicles.dealershippaintcolors
+-- Decompiled with the Synapse X Luau decompiler.
+
+return { BrickColor.new("Pastel Blue"), BrickColor.new("Light reddish violet"), BrickColor.new("Mint"), };
+
+vehicles.paintcolors
+-- Decompiled with the Synapse X Luau decompiler.
+
+return { BrickColor.new("Bright yellow"), BrickColor.new("Royal purple"), BrickColor.new("Persimmon"), BrickColor.new("Br. yellowish orange"), BrickColor.new("Pine Cone"), BrickColor.new("Shamrock"), BrickColor.new("Slime green"), BrickColor.new("Baby blue"), BrickColor.new("Tawny"), BrickColor.new("Reddish brown"), BrickColor.new("Mint"), BrickColor.new("White"), BrickColor.new("Maroon"), BrickColor.new("Bright bluish green"), BrickColor.new("Artichoke"), BrickColor.new("Sand red"), BrickColor.new("Steel blue"), BrickColor.new("Black"), BrickColor.new("Sunrise"), BrickColor.new("Plum"), BrickColor.new("Br. yellowish green"), BrickColor.new("Smokey grey"), BrickColor.new("Bright blue"), BrickColor.new("Electric blue"), BrickColor.new("Bright orange"), BrickColor.new("Sea green"), BrickColor.new("Gold"), BrickColor.new("Fossil"), BrickColor.new("Buttermilk"), BrickColor.new("Pastel orange"), BrickColor.new("Cocoa"), BrickColor.new("Cool yellow"), BrickColor.new("Alder"), BrickColor.new("Neon orange"), BrickColor.new("Lavender"), BrickColor.new("Grime"), BrickColor.new("Medium red"), BrickColor.new("Pink"), BrickColor.new("Hurricane grey") };
+
+database.zones 
+-- Decompiled with the Synapse X Luau decompiler.
+
+return {
+	Outside = {
+		Outside = true, 
+		Ambience = {
+			Day = "rbxassetid://526738965", 
+			Night = "rbxassetid://390457804"
+		}, 
+		AmbientReverb = Enum.ReverbType.City
+	}, 
+	Tunnel = {
+		AmbientReverb = Enum.ReverbType.Cave, 
+		RollOffScale = 0.4
+	}, 
+	StateHouse = {
+		AmbientReverb = Enum.ReverbType.StoneRoom
+	}, 
+	Apartment = {
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	NHCTA = {
+		Ambience = { "rbxassetid://1839896751" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	MPBS = {
+		Ambience = { "rbxassetid://1836326360" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	ParkWild = {
+		Ambience = { "rbxassetid://1837152501" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	McDoogle = {
+		Ambience = { "rbxassetid://1842645112" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Mansion = {
+		Ambience = { "rbxassetid://1837255411" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Volcano = {
+		Ambience = { "rbxassetid://1836032761" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	MSPB = {
+		Ambience = { "rbxassetid://1844372210" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	NGWP = {
+		Ambience = { "rbxassetid://1837477829" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	ASPS = {
+		Ambience = { "rbxassetid://5801523905" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	},
+	Labratory = {
+		Ambience = { "rbxassetid://1835124514" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Rooftop = {
+		Ambience = { "rbxassetid://1843535692" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Asian = {
+		Ambience = { "rbxassetid://1837708187" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Foxhound = {
+		Ambience = { "rbxassetid://1842719368" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Trailer = {
+		Ambience = { "rbxassetid://1838907824" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Aces = {
+		Ambience = { "rbxassetid://1837261172" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Sheriff = {
+		Ambience = { "rbxassetid://1846080689" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	LPD = {
+		Ambience = { "rbxassetid://1836690768" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	FireTower = {
+		Ambience = { "rbxassetid://1435208742" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Barbers = {
+		Ambience = { "rbxassetid://1255838673" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	GunStore = {
+		Ambience = { "rbxassetid://1845756489" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Taphouse = {
+		Ambience = { "rbxassetid://1435196603" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Store = {
+		Ambience = { "rbxassetid://1841476212" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Office = {
+		Ambience = { "rbxassetid://216782254" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	PollingStation = {
+		Ambience = { "rbxassetid://216782254" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Shamrock = {
+		Ambience = { "rbxassetid://1435190218" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Hospital = {
+		Ambience = { "rbxassetid://1848347614" }, 
+		AmbientReverb = Enum.ReverbType.Bathroom
+	}, 
+	WestEnterprise = {
+		Ambience = { "rbxassetid://1836790668" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Warehouse = {
+		AmbientReverb = Enum.ReverbType.Hangar
+	}, 
+	RussianClub = {
+		Ambience = { "rbxassetid://1845924062" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	Church = {
+		Ambience = { "rbxassetid://154294567" }, 
+		AmbientReverb = Enum.ReverbType.Auditorium
+	}, 
+	Stadium = {
+		Ambience = { "rbxassetid://1846417887" }, 
+		AmbientReverb = Enum.ReverbType.Auditorium
+	}, 
+	Playground = {
+		Ambience = { "rbxassetid://1840544541" }, 
+		AmbientReverb = Enum.ReverbType.Auditorium
+	}, 
+	Beach = {
+		Ambience = { "rbxassetid://1845891274" }, 
+		AmbientReverb = Enum.ReverbType.Auditorium
+	}, 
+	Residential = {
+		Ambience = { "rbxassetid://1836362602" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	FireStation = {
+		Ambience = { "rbxassetid://1841007628" }, 
+		AmbientReverb = Enum.ReverbType.StoneRoom
+	}, 
+	Lighthouse = {
+		Ambience = { "rbxassetid://1839738369" }, 
+		AmbientReverb = Enum.ReverbType.StoneRoom
+	}, 
+	DDStore = {
+		Ambience = { "rbxassetid://1842368693" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	ED = {
+		Ambience = { "rbxassetid://1836894438" }, 
+		AmbientReverb = Enum.ReverbType.Cave
+	}, 
+	Sewer = {
+		Ambience = { "rbxassetid://1839842545" }, 
+		AmbientReverb = Enum.ReverbType.SewerPipe
+	}, 
+	Courthouse = {
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Library = {
+		Ambience = { "rbxassetid://1435178204" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Farm = {
+		Ambience = { "rbxassetid://1838998011" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Bank = {
+		Ambience = { "rbxassetid://1842306658" }, 
+		AmbientReverb = Enum.ReverbType.ConcertHall
+	}, 
+	NationalGuard = {
+		Ambience = { "rbxassetid://1841049702" }, 
+		AmbientReverb = Enum.ReverbType.ConcertHall
+	}, 
+	Restaurant = {
+		Ambience = { "rbxassetid://1435185514" }, 
+		AmbientReverb = Enum.ReverbType.CarpettedHallway
+	}, 
+	Prison = {
+		Ambience = { "rbxassetid://1839919050" }, 
+		AmbientReverb = Enum.ReverbType.StoneCorridor
+	}, 
+	OldPrison = {
+		Ambience = { "rbxassetid://1435168082" }, 
+		AmbientReverb = Enum.ReverbType.StoneCorridor
+	}, 
+	IrishPub = {
+		Ambience = { "rbxassetid://1435174406" }, 
+		AmbientReverb = Enum.ReverbType.Hallway
+	}, 
+	VoltNightclub = {
+		Ambience = { "rbxassetid://1844783569", "rbxassetid://1846605381", "rbxassetid://1845369400", "rbxassetid://1843256986", "rbxassetid://1837250151" }, 
+		AmbientReverb = Enum.ReverbType.Arena
+	}
+};
+
+replicatedstorage.shared.maid
+
+-- Decompiled with the Synapse X Luau decompiler.
+local u1 = nil
+u1 = {
+	ClassName = "Maid", 
+	new = function()
+		return setmetatable({
+			_tasks = {}
+		}, u1);
+	end, 
+	__index = function(p1, p2)
+		if u1[p2] then
+			return u1[p2];
+		end;
+		return p1._tasks[p2];
+	end, 
+	__newindex = function(p3, p4, p5)
+		if u1[p4] ~= nil then
+			error(("'%s' is reserved"):format(tostring(p4)), 2);
+		end;
+		local l___tasks__1 = p3._tasks;
+		local v2 = l___tasks__1[p4];
+		l___tasks__1[p4] = p5;
+		if v2 then
+			if type(v2) == "function" then
+				v2();
+				return;
+			end;
+			if typeof(v2) ~= "RBXScriptConnection" then
+				if v2.Destroy then
+					v2:Destroy();
+				end;
+				return;
+			end;
+		else
+			return;
+		end;
+		v2:Disconnect();
+	end, 
+	GiveTask = function(p6, p7)
+		assert(p7);
+		local v3 = #p6._tasks + 1;
+		p6[v3] = p7;
+		if type(p7) == "table" and not p7.Destroy then
+			warn("[Maid.GiveTask] - Gave table task without .Destroy\n\n" .. debug.traceback());
+		end;
+		return v3;
+	end, 
+	GivePromise = function(p8, p9)
+		if not p9:IsPending() then
+			return p9;
+		end;
+		local v4 = p9:resolved();
+		local u2 = p8:GiveTask(v4);
+		v4:Finally(function()
+			p8[u2] = nil;
+		end);
+		return v4;
+	end, 
+	DoCleaning = function(p10)
+		local l___tasks__5 = p10._tasks;
+		for v6, v7 in pairs(l___tasks__5) do
+			if typeof(v7) == "RBXScriptConnection" then
+				l___tasks__5[v6] = nil;
+				v7:Disconnect();
+			end;
+		end;
+		local v8, v9 = next(l___tasks__5);
+		while v9 ~= nil do
+			l___tasks__5[v8] = nil;
+			if type(v9) == "function" then
+				v9();
+			elseif typeof(v9) == "RBXScriptConnection" then
+				v9:Disconnect();
+			elseif v9.Destroy then
+				v9:Destroy();
+			end;
+			local v10, v11 = next(l___tasks__5);
+			v8 = v10;
+			v9 = v11;		
+		end;
+	end
+};
+u1.Destroy = u1.DoCleaning;
+return u1;
+
+replicatedstorage.shared.util
+--SynapseX Decompiler
+
+local API = {}
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+function API.ShallowCopy(orig)
+	local orig_type = type(orig)
+	local copy
+	if orig_type == "table" then
+		copy = {}
+		for orig_key, orig_value in pairs(orig) do
+			copy[orig_key] = orig_value
+		end
+	else
+		copy = orig
+	end
+	return copy
+end
+function API.DeepCopy(val)
+	if type(val) == "table" then
+		local new = {}
+		for k, v in pairs(val) do
+			new[k] = API.DeepCopy(v)
+		end
+		return new
+	else
+		return val
+	end
+end
+function API.ExpPcall(initWait, maxTries, func)
+	local try = 0
+	local suc, val
+	repeat
+		suc, val = pcall(func)
+		if not suc then
+			wait(initWait)
+			try = try + 1
+			initWait = initWait * 2
+		end
+	until suc or maxTries <= try
+	return suc and val, suc
+end
+function API.Find(tab, object)
+	for i, v in pairs(tab) do
+		if v == object then
+			return i
+		end
+	end
+end
+function API.GetHumanoidRootPart(player)
+	if player.Character then
+		return player.Character:FindFirstChild("HumanoidRootPart")
+	end
+end
+function API.GetHumanoid(character)
+	return character:FindFirstChild("Humanoid")
+end
+function API.GetHumanoidFromPlayer(player)
+	if player and player.Character then
+		return API.GetHumanoid(player.Character)
+	end
+end
+function API.GetUserIdFromUsername(username)
+	for _, v in pairs(Players:GetPlayers()) do
+		if v.Name:lower() == username:lower() then
+			return v.UserId
+		end
+	end
+	local suc, val = pcall(Players.GetUserIdFromNameAsync, Players, username)
+	return suc and val
+end
+function API.GetUsernameFromUserId(userId)
+	local player = Players:GetPlayerByUserId(userId)
+	if player then
+		return player.Name
+	else
+		local suc, val = pcall(Players.GetNameFromUserIdAsync, Players, userId)
+		return suc and val
+	end
+end
+function API.TrimString(s)
+	return s:gsub("^%s*(.-)%s*$", "%1")
+end
+function API.GetDistanceBetweenPlayers(player1, player2)
+	local hrt1 = API.GetHumanoidRootPart(player1)
+	local hrt2 = API.GetHumanoidRootPart(player2)
+	if hrt1 and hrt2 then
+		return (hrt1.Position - hrt2.Position).Magnitude
+	end
+end
+return API
+
+      replicatedstorage.resources
+
+-- The core resource manager and library loader for RoStrap
+-- @rostrap Resources
+-- It is designed to increase organization and streamline the retrieval and networking of resources.
+-- @documentation https://rostrap.github.io/Resources/
+-- @source https://github.com/RoStrap/Resources/
+-- @author Validark
+
+local RunService = game:GetService("RunService")
+
+local Metatable = {}
+local Resources = setmetatable({}, Metatable)
+local Caches = {} -- All cached data within Resources is accessible through Resources:GetLocalTable()
+
+local Instance_new, type, require = Instance.new, type, require
+local LocalResourcesLocation
+
+local SERVER_SIDE = RunService:IsServer()
+local UNINSTANTIABLE_INSTANCES = setmetatable({
+	Folder = false; RemoteEvent = false; BindableEvent = false;
+	RemoteFunction = false; BindableFunction = false; Library = true;
+}, {
+	__index = function(self, InstanceType)
+		local Instantiable, GeneratedInstance = pcall(Instance_new, InstanceType)
+		local Uninstantiable
+
+		if Instantiable and GeneratedInstance then
+			GeneratedInstance:Destroy()
+			Uninstantiable = false
+		else
+			Uninstantiable = true
+		end
+
+		self[InstanceType] = Uninstantiable
+		return Uninstantiable
+	end;
+})
+
+function Resources:GetLocalTable(TableName) -- Returns a cached table by TableName, generating if non-existant
+	TableName = self ~= Resources and self or TableName
+	local Table = Caches[TableName]
+
+	if not Table then
+		Table = {}
+		Caches[TableName] = Table
+	end
+
+	return Table
+end
+
+local function GetFirstChild(Folder, InstanceName, InstanceType)
+	local Object = Folder:FindFirstChild(InstanceName)
+
+	if not Object then
+		if UNINSTANTIABLE_INSTANCES[InstanceType] then error("[Resources] " .. InstanceType .. " \"" .. InstanceName .. "\" is not installed within " .. Folder:GetFullName() .. ".", 2) end
+		Object = Instance_new(InstanceType)
+		Object.Name = InstanceName
+		Object.Parent = Folder
+	end
+
+	return Object
+end
+
+function Metatable:__index(MethodName)
+	if type(MethodName) ~= "string" then error("[Resources] Attempt to index Resources with invalid key: string expected, got " .. typeof(MethodName), 2) end
+	if MethodName:sub(1, 3) ~= "Get" then error("[Resources] Methods should begin with \"Get\"", 2) end
+	local InstanceType = MethodName:sub(4)
+
+	-- Set CacheName to ["RemoteEvent" .. "s"], or ["Librar" .. "ies"]
+	local a, b = InstanceType:byte(-2, -1) -- this is a simple gimmick but works well enough for all Roblox ClassNames :D
+	local CacheName = b == 121 and a ~= 97 and a ~= 101 and a ~= 105 and a ~= 111 and a ~= 117 and InstanceType:sub(1, -2) .. "ies" or InstanceType .. "s"
+	local IsLocal = InstanceType:sub(1, 5) == "Local"
+	local Cache, Folder, FolderGetter -- Function Constants
+
+	if IsLocal then -- Determine whether a method is local
+		InstanceType = InstanceType:sub(6)
+
+		if InstanceType == "Folder" then
+			FolderGetter = function() return GetFirstChild(LocalResourcesLocation, "Resources", "Folder") end
+		else
+			FolderGetter = Resources.GetLocalFolder
+		end
+	else
+		if InstanceType == "Folder" then
+			FolderGetter = function() return script end
+		else
+			FolderGetter = Resources.GetFolder
+		end
+	end
+
+	local function GetFunction(this, InstanceName)
+		InstanceName = this ~= self and this or InstanceName
+		if type(InstanceName) ~= "string" then error("[Resources] " .. MethodName .. " expected a string parameter, got " .. typeof(InstanceName), 2) end
+
+		if not Folder then
+			Cache = Caches[CacheName]
+			Folder = FolderGetter(IsLocal and CacheName:sub(6) or CacheName)
+
+			if not Cache then
+				Cache = Folder:GetChildren() -- Cache children of Folder into Table
+				Caches[CacheName] = Cache
+
+				for i = 1, #Cache do
+					local Child = Cache[i]
+					Cache[Child.Name] = Child
+					Cache[i] = nil
+				end
+			end
+		end
+
+		local Object = Cache[InstanceName]
+
+		if not Object then
+			if SERVER_SIDE or IsLocal then
+				Object = GetFirstChild(Folder, InstanceName, InstanceType)
+			else
+				Object = Folder:WaitForChild(InstanceName, 5)
+
+				if not Object then
+					local Caller = getfenv(0).script
+
+					if Caller and Caller.Parent and Caller.Parent.Parent == script then
+						warn("[Resources] Make sure a Script in ServerScriptService calls `Resources:LoadLibrary(\"" .. Caller.Name .. "\")`")
+					else
+						if InstanceType == "Library" then
+							warn("[Resources] Did you forget to install " .. InstanceName .. "?")
+						elseif InstanceType == "Folder" then
+							warn("[Resources] Make sure a Script in ServerScriptService calls `require(ReplicatedStorage:WaitForChild(\"Resources\"))`")
+						end
+					end
+
+					Object = Folder:WaitForChild(InstanceName)
+				end
+			end
+
+			Cache[InstanceName] = Object
+		end
+
+		return Object
+	end
+
+	Resources[MethodName] = GetFunction
+	return GetFunction
+end
+
+if not SERVER_SIDE then
+	local LocalPlayer repeat LocalPlayer = game:GetService("Players").LocalPlayer until LocalPlayer or not game:GetService("RunService").Heartbeat:wait()	
+	repeat LocalResourcesLocation = LocalPlayer:FindFirstChildOfClass("PlayerScripts") until LocalResourcesLocation or not  game:GetService("RunService").Heartbeat:wait()
+else
+	LocalResourcesLocation = game:GetService("ServerStorage")
+	local LibraryRepository = LocalResourcesLocation:FindFirstChild("Repository") or game:GetService("ServerScriptService"):FindFirstChild("Repository")
+
+	local function CacheLibrary(Storage, Library, StorageName)
+		if Storage[Library.Name] then
+			error("[Resources] Duplicate " .. StorageName .. " Found:\n\t"
+				.. Storage[Library.Name]:GetFullName() .. " and \n\t"
+				.. Library:GetFullName()
+				.. "\nOvershadowing is only permitted when a server-only library overshadows a replicated library"
+			, 0)
+		else
+			Storage[Library.Name] = Library
+		end
+	end
+
+	if LibraryRepository then
+		-- If Folder `Repository` exists, move all Libraries over to ReplicatedStorage
+		-- unless if they have "Server" in their name or in the name of a parent folder
+
+		local ServerLibraries = {}
+		local ReplicatedLibraries = Resources:GetLocalTable("Libraries")
+		local FoldersToHandle = {}
+		local FolderChildren, ExclusivelyServer = LibraryRepository:GetChildren(), false
+
+		while FolderChildren do
+			FoldersToHandle[FolderChildren] = nil
+
+			for i = 1, #FolderChildren do
+				local Child = FolderChildren[i]
+				local ClassName = Child.ClassName
+				local ServerOnly = ExclusivelyServer or (Child.Name:find("Server", 1, true) and true or false)
+
+				if ClassName == "ModuleScript" then
+					if ServerOnly then
+						Child.Parent = Resources:GetLocalFolder("Libraries")
+						CacheLibrary(ServerLibraries, Child, "ServerLibraries")
+					else
+						-- ModuleScripts which are not descendants of ServerOnly folders and do not have "Server" in name should be moved to Libraries
+						--	if there are descendants of the ModuleScript with "Server" in the name, we should copy the original for use on the server
+						--	and replicate a version with everything with "Server" in the name deleted
+
+						local ModuleDescendants = Child:GetDescendants()
+						local TemplateObject
+
+						-- Iterate through the ModuleScript's Descendants, deleting those with "Server" in the Name
+
+						for j = 1, #ModuleDescendants do
+							local Descendant = ModuleDescendants[j]
+
+							if Descendant.Name:find("Server", 1, true) then
+								if not TemplateObject then -- Before the first deletion, clone Child
+									TemplateObject = Child:Clone()
+								end
+
+								Descendant:Destroy()
+							end
+						end
+
+						if TemplateObject then -- If we want to replicate an object with Server descendants, move the server-version to LocalLibraries
+							TemplateObject.Parent = Resources:GetLocalFolder("Libraries")
+							CacheLibrary(ServerLibraries, TemplateObject, "ServerLibraries")
+						end
+
+						Child.Parent = Resources:GetFolder("Libraries") -- Replicate Child which may have had things deleted
+						CacheLibrary(ReplicatedLibraries, Child, "ReplicatedLibraries")
+					end
+				elseif ClassName == "Folder" then
+					FoldersToHandle[Child:GetChildren()] = ServerOnly
+				else
+					error("[Resources] Instances within your Repository must be either a ModuleScript or a Folder, found: " .. ClassName .. " " .. Child:GetFullName(), 0)
+				end
+			end
+			FolderChildren, ExclusivelyServer = next(FoldersToHandle)
+		end
+
+		for Name, Library in next, ServerLibraries do
+			ReplicatedLibraries[Name] = Library
+		end
+
+		LibraryRepository:Destroy()
+	end
+end
+
+local LoadedLibraries = Resources:GetLocalTable("LoadedLibraries")
+local CurrentlyLoading = {} -- This is a hash which LoadLibrary uses as a kind of linked-list history of [Script who Loaded] -> Library
+
+function Resources:LoadLibrary(LibraryName)
+	LibraryName = self ~= Resources and self or LibraryName
+	local Data = LoadedLibraries[LibraryName]
+
+	if Data == nil then
+		local Caller = getfenv(0).script or {Name = "Command bar"} -- If called from command bar, use table as a reference (never concatenated)
+		local Library = Resources:GetLibrary(LibraryName)
+
+		CurrentlyLoading[Caller] = Library
+
+		-- Check to see if this case occurs:
+		-- Library -> Stuff1 -> Stuff2 -> Library
+
+		-- WHERE CurrentlyLoading[Library] is Stuff1
+		-- and CurrentlyLoading[Stuff1] is Stuff2
+		-- and CurrentlyLoading[Stuff2] is Library
+
+		local Current = Library
+		local Count = 0
+
+		while Current do
+			Count = Count + 1
+			Current = CurrentlyLoading[Current]
+
+			if Current == Library then
+				local String = Current.Name -- Get the string traceback
+
+				for _ = 1, Count do
+					Current = CurrentlyLoading[Current]
+					String = String .. " -> " .. Current.Name
+				end
+
+				error("[Resources] Circular dependency chain detected: " .. String)
+			end
+		end
+
+		Data = require(Library)
+
+		if CurrentlyLoading[Caller] == Library then -- Thread-safe cleanup!
+			CurrentlyLoading[Caller] = nil
+		end
+
+		if Data == nil then
+			error("[Resources] " .. LibraryName .. " must return a non-nil value. Return false instead.")
+		end
+
+		LoadedLibraries[LibraryName] = Data -- Cache by name for subsequent calls
+	end
+
+	return Data
+end
+
+Metatable.__call = Resources.LoadLibrary
+return Resources
